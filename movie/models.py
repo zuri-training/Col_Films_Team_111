@@ -2,24 +2,14 @@ from calendar import c
 import email
 from telnetlib import STATUS
 from django.db import models
-from django.contrib.auth.models import AbstractUser
 from django.utils.translation import gettext_lazy as _
 
-from .managers import CustomUserManager
+
 from django.contrib.auth import get_user_model
 from django.conf import settings
-user = settings.AUTH_USER_MODEL
-class CustomUser(AbstractUser):
-    username = None
-    email = models.EmailField(_('email address'), unique=True)
 
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = []
+from users.models import NewUser
 
-    objects = CustomUserManager()
-
-    def __str__(self):
-        return self.email
 
 CATEGORY_CHOICES = (
     ('A' , 'ACTION'),
@@ -35,7 +25,7 @@ class Movie(models.Model):
     title = models.CharField(max_length=20)
     description = models.TextField(max_length=100)
     category =  models.CharField(choices=CATEGORY_CHOICES, max_length=1)
-    uploader = models.ForeignKey(user, on_delete=models.CASCADE)
+    uploader = models.ForeignKey(NewUser, on_delete=models.CASCADE)
     status = models.CharField(choices=CATEGORY_CHOICES, max_length=1)
     movie_length = models.IntegerField()
     likes = models.IntegerField(default=0)
@@ -59,7 +49,7 @@ class Param(models.Model):
     #movies_size_max = 
 
 class Prefence(models.Model):
-    user = models.ForeignKey(user, on_delete=models.CASCADE)
+    user = models.ForeignKey(NewUser, on_delete=models.CASCADE)
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
     value = models.IntegerField()
 

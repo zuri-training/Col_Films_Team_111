@@ -1,34 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <title>Sign In</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Sign In</title>
 </head>
 <body>
-  <div class="top-container">
-    <div class="logo-container">
-      <img class="top-logo" src="images/logo.png" alt="">
+    <div class="top-container">
+        <div class="logo-container">
+            <img class="top-logo" 
+            src="images/desktop-logo.png" 
+            alt="one-cube logo" 
+            srcset="images/logo.png 23w,
+                    images/desktop-logo.png 92w"
+            sizes="(min-width: 1025px) 92px,
+                    23px">
+        </div>
+
+        <div class="form-wrapper">
+            <div class="form-content">
+                <h2 class="login-text">Input your login details</h2>
+
+                <form class="sign-in-area" action="" method="post">
+                    <input class="sign-in-email" type="email" placeholder="Input e-mail address" name="emailInput"><br>
+                    <input type="password" name="password" placeholder="Input password"><br>
+
+                    <button type="submit">Sign in</button><br><br>
+                    <a href="" class="forgot-password">Forgot password?</a>
+                </form>
+            </div>
+        </div>
     </div>
 
-    <div class="form-wrapper">
-      <div class="form-content">
-        <h2 class="login-text">Input your login details</h2>
+    <footer>
+        <div class="footer-left">
+            <ul class="footer-list">
+                <li>
+                    <a href="" class="footer-link">Home</a>
+                </li>
+                <li>
+                    <a href="" class="footer-link">FAQ</a>
+                </li>
+                <li>
+                    <a href="" class="footer-link">Privacy</a>
+                </li>
+            </ul>
 
-        <form class="sign-in-area" action="" method="post">
-          <input class="sign-in-input" type="email" placeholder="Input e-mail address" name="emailInput"><br>
-          <input type="password" name="password" placeholder="Input password"><br>
+        </div>
+        <div class="footer-center">
+            <ul class="footer-list">
+                <li>
+                        About Us
+                </li>
+                <li>
+                    <a href="" class="footer-link">
+                        Terms of Use
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="footer-link">
+                        Registration
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-right">
+            <ul class="footer-list">
+                <li>
+                    Contact us
+                </li>
+                <li>
+                    <a href="" class="footer-link">
+                        <img class="footer-icons" src="images/phone.png" alt="">
+                        <p>Phone Number</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="footer-link">
+                        <img class="footer-icons" src="images/email.png" alt="">
+                        <p>Email Address</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="footer-link">
+                        <img class="footer-icons" src="images/fb.png" alt="">
+                        <p>Facebook Account</p>
+                    </a>
+                </li>
+            </ul>
 
-          <button type="submit">Sign in</button><br><br>
-          <a href="" class="forgot-password">Forgot password?</a>
-        </form>
-      </div>
-    </div>
-  </div>
+
+        </div>
+    </footer>
+
 </body>
 </html>

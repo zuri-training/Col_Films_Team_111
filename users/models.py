@@ -28,6 +28,7 @@ class NewUser(AbstractBaseUser, PermissionsMixin):
     college_name = models.CharField(max_length=100)
     user_name = models.CharField(max_length=150, blank=True)
     first_name = models.CharField(max_length=150, blank=True)
+    last_name = models.CharField(max_length=150, null=True, blank=True)
     start_date = models.DateTimeField(default=timezone.now)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=False)
@@ -41,3 +42,10 @@ class NewUser(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.email
+
+class Otp(models.Model):
+    registration_number = models.CharField(max_length=100)
+    otp_code = models.CharField(max_length=10)
+
+    def __str__(self):
+        return self.otp_code + ' For ' + self.registration_number

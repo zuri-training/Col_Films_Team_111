@@ -206,6 +206,11 @@ footer p {
   color: inherit;
 }
 
+.footer-link:hover{
+  color: #FCA311;
+}
+
+
 .footer-contact {
   display: flex;
   flex-direction: column;

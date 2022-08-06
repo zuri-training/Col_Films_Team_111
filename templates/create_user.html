@@ -1,0 +1,145 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=!, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.google.com/specimen/Open+Sans" />
+    <link rel="icon" type="images/png" href="logo.png" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500&display=swap" rel="stylesheet" />
+    <script src="{% static 'index.js' %}"></script>
+    <title>Sign Up</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="Logo.png" alt="logo" />
+        </div>
+    </header>
+    {% if access_error %}
+    <h1>{{access_error}}</h1>
+    {% else %}
+    <main>
+        <form method="post" id="form">
+            {%csrf_token%}
+            <div class="content" id="step3">
+                <h4>Step 3 of 3</h4>
+                <br />
+                <div class="step-row">
+                    <div class="step-col" style="background-color: #e5e5e5;"></div>
+                    <div class="step-col"  style="background-color: #e5e5e5;"></div>
+                    <div class="step-col"  style="background-color: #fca311;"></div>
+                </div>
+                <h4>Create password</h4><br>
+                <input type="password" placeholder="Input password" id="password" name="password1" class="input"
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
+                <input type="hidden" name="reg" value="{{data}}">
+
+                <div id="error1">This field is required</div>
+                <br />
+                <p style="font-style: italic">
+                    Note:
+                    <small>password must be at least 8 alphabet long and must contain at
+                        least one upperCase, and number (e.g:'OneCube111')</small>
+                </p>
+                <input type="password" placeholder="Confirm password" name="password2" id="password2" class="input" /><br />
+                <div id="error2">This field is required</div>
+                <br />
+                {%if success%}
+                <h1 style="color: white;">{{success}}</h1>
+                {%endif%}
+                {%if password_error%}
+                <h1 style="color: white;">{{password_error}}</h1>
+                {%endif%}
+                <br>
+                <button class="btn" type="submit" onclick="checkInput()">
+                    Sign Up
+                </button>
+        </form>
+    </main>
+    {%endif%}
+    <footer>
+        <div class="container">
+            <div>
+                <ul>
+                    <li><a href="#"> About Us</a></li>
+                    <li><a href="#"> Terms Of Use</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="#"> Home</a></li>
+                    <li><a href="#"> FAQ</a></li>
+                    <li><a href="#"> Privacy</a></li>
+                    <li><a href="#"> Registration</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <ul>
+                    <li><a href="#"> Contact Us</a></li>
+                    <li>
+                        <i class="fa fa-fw fa-phone icon"></i><a href="#"> Phone Number</a>
+                    </li>
+                    <li>
+                        <i class="fa fa-fw fa-envelope icon"></i><a href="#"> Email address</a>
+                    </li>
+                    <li>
+                        <i class="fa fa-fw fa-facebook icon"></i><a href="#"> Facebook account</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // input validation
+        const password = document.getElementById("password");
+        const password2 = document.getElementById("password2");
+
+       
+
+        function checkInput() {
+            const passwordValue = password.value.trim();
+            const password2Value = password2.value.trim();
+
+            if (passwordValue === "") {
+                document.getElementById("password").style.borderColor = "red";
+                document.querySelector("#error1").style.display = "block";
+            } else if (passwordValue.length < 8) {
+                document.getElementById("password").style.borderColor = "red";
+                document.querySelector("#error1").style.display = "block";
+                document.querySelector("#error1").innerHTML =
+                    "Password must be at least 8 character.";
+            } else {
+                document.querySelector("#error1").style.display = "none";
+                document.getElementById("password").style.borderColor =
+                    "rgb(99, 221, 255)";
+            }
+
+            if (password2Value === "") {
+                document.getElementById("password2").style.borderColor = "red";
+                document.querySelector("#error2").style.display = "block";
+                document.querySelector("#error2").innerHTML =
+                    "Please confirm your password";
+            } else if (password2Value !== passwordValue) {
+                document.getElementById("password2").style.borderColor = "red";
+                document.querySelector("#error2").style.display = "block";
+                document.querySelector("#error2").innerHTML =
+                    "Passwords doesn't match";
+            } else {
+                document.querySelector("#error1").style.display = "none";
+                document.getElementById("password2").style.borderColor =
+                    "rgb(99, 221, 255)";
+            }
+        }
+    </script>
+</body>
+
+</html>

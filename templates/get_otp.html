@@ -1,0 +1,127 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=!, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.google.com/specimen/Open+Sans" />
+    <link rel="icon" type="images/png" href="logo.png" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500&display=swap" rel="stylesheet" />
+    <script src="{% static 'index.js'%}"></script>
+    <title>Sign Up</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="Logo.png" alt="logo" />
+        </div>
+    </header>
+    {% if access_error %}
+    <h1>{{access_error}}</h1>
+    {%else%}
+    <main>
+        <form method="POST" id="form" action="">
+            {% csrf_token %}
+            <div class="content" id="step2">
+                <h4>Step 2 of 3</h4>
+                
+                <div class="step-row">
+                    <div class="step-col"  style="background-color: #e5e5e5;"></div>
+                    <div class="step-col"  style="background-color: #fca311;"></div>
+                    <div class="step-col"  style="background-color: #e5e5e5;"></div>
+                </div>
+                <p>
+                    An OTP has been sent to the corresponding email address.<br />
+                    Kindly input the 6-digit number
+                </p>
+                <div>
+                    <div class="userInput">
+                        <!-- <input class="OtpInput" id="ist" type="text" maxlength="1" name="otp"  -->
+                        <input class="OtpInput" id="ist" type="text" maxlength="1" name="otp1" 
+                            onkeyup="clickEvent(this,'sec')"/>
+
+                        <input class="OtpInput" id="sec" type="text" maxlength="1" name="otp2"
+                            onkeyup="clickEvent(this,'third')" />
+
+                        <input class="OtpInput" id="third" type="text" maxlength="1" name="otp3"
+                            onkeyup="clickEvent(this,'fourth')" />
+
+                        <input class="OtpInput" id="fourth" type="text" maxlength="1" name="otp4"
+                            onkeyup="clickEvent(this,'fifth')" />
+
+                        <input class="OtpInput" id="fifth" type="text" maxlength="1" name="otp5"
+                            onkeyup="clickEvent(this,'sixth')" />
+
+                        <input class="OtpInput" id="sixth" type="text" maxlength="1" name="otp6"/>
+                        <input type="hidden" value="{{data}}" name="reg" id="" >
+                    </div>
+                    {{data}}
+                    {% if error %}
+                    <h1  style="color: white;">{{error}}</h1>
+                    {% endif %}
+
+                </div>
+                <div style="display: flex; gap: 10px">
+                    <p><small>OTP expires in 10 minutes</small></p>
+                    <div style="margin-top: 5px">
+                        <span class="count-digit">1</span>
+                        <span class="count-digit">0</span>
+                        <span class="separator">:</span>
+                        <span class="count-digit">0</span>
+                        <span class="count-digit">0</span>
+                    </div>
+                </div>
+                <p>I did not receive any otp.<strong>RESEND</strong></p>                <br />
+                <button type="submit" class="btn">
+                    Verify
+                </button>
+            </div>
+
+
+        </form>
+    </main>
+    {%endif%}
+    <footer>
+        <div class="container">
+            <div>
+                <ul>
+                    <li><a href="#"> About Us</a></li>
+                    <li><a href="#"> Terms Of Use</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="#"> Home</a></li>
+                    <li><a href="#"> FAQ</a></li>
+                    <li><a href="#"> Privacy</a></li>
+                    <li><a href="#"> Registration</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <ul>
+                    <li><a href="#"> Contact Us</a></li>
+                    <li>
+                        <i class="fa fa-fw fa-phone icon"></i><a href="#"> Phone Number</a>
+                    </li>
+                    <li>
+                        <i class="fa fa-fw fa-envelope icon"></i><a href="#"> Email address</a>
+                    </li>
+                    <li>
+                        <i class="fa fa-fw fa-facebook icon"></i><a href="#"> Facebook account</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+   
+</body>
+
+</html>

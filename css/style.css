@@ -9,6 +9,15 @@ body {
   margin: 0;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
 .top-container {
   background-color: #010210;
   position: relative;
@@ -48,6 +57,10 @@ body {
   align-items: flex-start;
 }
 
+.form-content h2 {
+  margin: 28px 0;
+}
+
 .login-text {
   font-style: normal;
   font-weight: 400;
@@ -71,8 +84,8 @@ input[type="password"] {
   align-items: center;
   padding: 8px 24px;
   gap: 10px;
-  width: 376px;
-  height: 40px;
+  width: 23.5rem;
+  height: 2.5rem;
   left: 27px;
   top: 311px;
   border: 1px solid #8a8989;
@@ -92,9 +105,10 @@ input::placeholder {
 }
 
 button {
-  color: #fffafa;
+  color: #010210;
   width: 130.94px;
   height: 38.34px;
+  font-style: normal;
   font-weight: 700;
   font-size: 18.874px;
   line-height: 22px;
@@ -128,15 +142,28 @@ button:disabled {
 
 footer {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 41px auto;
-  gap: 0;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 40px;
   width: 100%;
+  height: 47.625rem;
   font-weight: 500;
   font-size: 16px;
   line-height: 32px;
   color: #010210;
+  text-align: center;
+  padding: 32px 90px 25px;
+}
+
+.footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 40px;
+  width: 248px;
+  height: 633px;
 }
 
 footer p {
@@ -144,9 +171,34 @@ footer p {
   margin: 0;
 }
 
+.footer-description {
+  text-align: center;
+}
+
+.footer-desc-text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.footer-site-map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-headings {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  color: #000000;
+  font-style: normal;
+}
+
 .footer-list {
   list-style-type: none;
-  padding: 32px 14px;
+  padding: 0;
 }
 
 .footer-link {
@@ -154,13 +206,43 @@ footer p {
   color: inherit;
 }
 
-.footer-icons {
-  display: inline-block;
+.footer-link:hover{
+  color: #FCA311;
+}
+
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 16px;
+  width: 172px;
+  height: 7.563rem;
+}
+
+.socials-icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 24px;
+}
+
+.footer-phone {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 16px;
 }
 
 /* Media query for tablets/iPads */
 @media (min-width: 768px) and (max-width: 1024px) {
-  footer{
+  footer {
     gap: 100px;
     padding-left: 90px;
   }
@@ -171,10 +253,6 @@ footer p {
   .top-container {
     height: 100vh;
   }
-
-  /* .logo-container {
-    height: 8.5rem;
-  } */
 
   .top-logo {
     position: absolute;
@@ -217,19 +295,88 @@ footer p {
   }
 
   footer {
-    height: 19.563rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 12px;
+    height: 25.25rem;
+    width: 100%;
+    text-align: left;
+    padding: 39px 190px 33px 75px;
+  }
+
+  .footer-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, auto));
+    column-gap: 234px;
+    height: 20.75rem;
+    width: 81.61%;
+    align-items: start;
+  }
+
+  .footer-description {
+    width: 279px;
+    text-align: left;
+  }
+
+  .footer-desc-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: #000000;
+  }
+
+  .footer-site-map {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+    width: 185px;
+    text-align: left;
+  }
+
+  .footer-headings {
+    font-style: normal;
     font-weight: 500;
     font-size: 26px;
     line-height: 32px;
-    padding-left: 60px;
-    gap: 271px;
-  }
-  
-  .footer-list li{
-    margin: 12px auto;
+    color: #000000;
   }
 
-  .footer-list li:first-child{
-    margin-bottom: 16px;
+  .footer-list {
+    margin: 0;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 40px;
+    color: #000000;
+  }
+
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+    width: 244px;
+  }
+
+  .footer-phone p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 32px;
+    color: #000000;
+  }
+
+  #rights {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    width: 215px;
   }
 }

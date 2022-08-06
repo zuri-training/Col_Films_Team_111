@@ -1,0 +1,349 @@
+/* Email and Password Input*/
+
+.sign-in-email,
+input[type="password"] {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 24px;
+  gap: 10px;
+  width: 23.5rem;
+  height: 2.5rem;
+  left: 27px;
+  top: 311px;
+  border: 1px solid #8a8989;
+  border-radius: 8px;
+  background: transparent;
+  color: #8a8989;
+  caret-color: #8a8989;
+}
+
+input:hover,
+input:focus {
+  border: 1px solid #40dee8;
+}
+
+input::placeholder {
+  color: rgba(229, 229, 229, 0.7);
+}
+
+
+/* Desktop view */
+
+.sign-in-email,
+  input[type="password"] {
+    width: 755px;
+    height: 96px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  input::placeholder {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+  }
+    
+    
+/* Buttons */
+
+button {
+  color: #010210;
+  width: 130.94px;
+  height: 38.34px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18.874px;
+  line-height: 22px;
+  background: #fca311;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+button:hover {
+  border: none;
+  box-shadow: 0px 4px 12px rgba(137, 21, 21, 0.61);
+}
+
+button:active {
+  background: #de9721;
+  box-shadow: 0px 4px 12px rgba(137, 21, 21, 0.61);
+}
+
+button:disabled {
+  background: #fdd188;
+}
+    
+
+/* Desktop view */
+
+  button {
+    width: 222px;
+    height: 65px;
+  }
+    
+    
+/*Footer HTML*/
+
+    <footer>
+        <div class="footer-wrapper">
+            <div class="footer-description">
+                <img class="footer-logo" src="images/desktop-footer-logo.png" alt="one-cube logo" srcset="images/mobile-footer-logo.png 77w,
+                        images/desktop-footer-logo.png 95w" sizes="(min-width: 1025px) 95px,
+                        77px">
+
+                <p class="footer-desc-text">Your one stop streaming platform for short college films by college students
+                </p>
+            </div>
+
+            <div class="footer-site-map">
+                <h2 class="footer-headings">Site Map</h2>
+                <ul class="footer-list">
+                    <li>
+                        <a href="" class="footer-link">Home</a>
+                    </li>
+                    <li>
+                        <a href="" class="footer-link">FAQ</a>
+                    </li>
+                    <li>
+                        <a href="" class="footer-link">Privacy Policies</a>
+                    </li>
+                    <li>
+                        <a href="" class="footer-link">Registration</a>
+                    </li>
+                    <li>
+                        <a href="" class="footer-link">About Us </a>
+                    </li>
+                    <li>
+                        <a href="" class="footer-link">Terms of Use</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h2 class="footer-headings">Contact us</h2>
+                <div class="socials-icon">
+                    <a href="" class="footer-link">
+                        <img src="images/desktop-insta.png" alt="instagram-icon" srcset="images/desktop-insta.png 31.47w,
+                        images/insta.png 19.67w" sizes="(min-width: 1025px) 31.47px,
+                        19.67px">
+                    </a>
+                    <a href="" class="footer-link">
+                        <img src="images/desktop-twitter.png" alt="twitter-icon" srcset="images/desktop-twitter.png 35.83w,
+                        images/twitter.png 22.4w" sizes="(min-width: 1025px) 35.83px,
+                        22.4px">
+                    </a>
+                    <a href="" class="footer-link">
+                        <img src="images/desktop-fb.png" alt="fb-icon" srcset="images/desktop-fb.png 19w,
+                        images/fb.png 11.88w" sizes="(min-width: 1025px) 19px,
+                        11.88px">
+                    </a>
+                    <a href="" class="footer-link">
+                        <img src="images/desktop-mail.png" alt="mail-icon" srcset="images/desktop-mail.png 31.3w,
+                        images/mail.png 19.56w" sizes="(min-width: 1025px) 31.3px,
+                        19.56px">
+                    </a>
+                </div>
+                <div class="footer-phone">
+                    <img src="images/desktop-phone.png" alt="phone-icon" srcset="images/desktop-phone.png 29.19w,
+                        images/phone.png 18.24w" sizes="(min-width: 1025px) 29.19px,
+                        18.24px">
+
+                    <p>+2348116455541</p>
+                </div>
+            </div>
+            <p id="rights">All Rights Reserved</p>
+        </div>
+    </footer>
+
+
+/* Footer CSS */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 40px;
+    width: 100%;
+    height: 47.625rem;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 32px;
+    color: #010210;
+    text-align: center;
+    padding: 32px 90px 25px;
+  }
+  
+  .footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 40px;
+    width: 248px;
+    height: 633px;
+  }
+  
+  footer p {
+    display: inline-block;
+    margin: 0;
+  }
+  
+  .footer-description {
+    text-align: center;
+  }
+  
+  .footer-desc-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  
+  .footer-site-map {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .footer-headings {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    color: #000000;
+    font-style: normal;
+  }
+  
+  .footer-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .footer-link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .footer-link:hover{
+  color: #FCA311;
+  }
+
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 16px;
+    width: 172px;
+    height: 7.563rem;
+  }
+  
+  .socials-icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 24px;
+  }
+  
+  .footer-phone {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 16px;
+  }
+
+
+/* Desktop view */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 12px;
+    height: 25.25rem;
+    width: 100%;
+    text-align: left;
+    padding: 39px 190px 33px 75px;
+  }
+
+  .footer-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, auto));
+    column-gap: 234px;
+    height: 20.75rem;
+    width: 81.61%;
+    align-items: start;
+  }
+
+  .footer-description {
+    width: 279px;
+    text-align: left;
+  }
+
+  .footer-desc-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: #000000;
+  }
+
+  .footer-site-map {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+    width: 185px;
+    text-align: left;
+  }
+
+  .footer-headings {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 32px;
+    color: #000000;
+  }
+
+  .footer-list {
+    margin: 0;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 40px;
+    color: #000000;
+  }
+
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+    width: 244px;
+  }
+
+  .footer-phone p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 32px;
+    color: #000000;
+  }
+
+  #rights {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    width: 215px;
+  }

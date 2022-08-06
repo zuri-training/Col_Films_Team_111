@@ -23,22 +23,114 @@
     width: 400px;
     position: absolute;
     top: 10px;
-    left: 80px;
-    transition: 0.5s;
+    left: 60px;
   }
   button {
     background-color: #fca311;
   }
   footer {
-    background-color: #e5e5e5;
-    padding: 10px;
-    width: 100%;
-    margin-top: 60px;
-  }
-  .container {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 40px;
+    width: 100%;
+   /* height: 47.625rem;*/
+    font-weight: 500;
+    font-size: 16px;
+    /*line-height: 32px;*/
+    background-color: #e5e5e5;
+    color: #010210;
+    text-align: center;
+    padding: 32px 90px 25px;
+    bottom: 0;
   }
+  
+  .footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 40px;
+    width: 248px;
+    /*height: 633px;*/
+  }
+  
+  footer p {
+    display: inline-block;
+    margin: 0;
+    color: #010201;
+  }
+  
+  .footer-description {
+    text-align: center;
+  }
+  
+  .footer-desc-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  
+  .footer-site-map {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .footer-headings {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    color: #000000;
+    font-style: normal;
+  }
+  
+  .footer-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .footer-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .footer-link:hover{
+    color: #FCA311;
+  }
+  
+  
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 16px;
+    width: 172px;
+    /*height: 7.563rem;*/
+  }
+  
+  .socials-icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 24px;
+  }
+  
+  .footer-phone {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 16px;
+  }
+  
   ul {
     list-style: none;
   }
@@ -180,9 +272,12 @@
     form {
       width: 100%;
     }
-    form .content {
-      left: 4px;
+    p {
       width: 100%;
+    }
+    form .content {
+      width: 100%;
+      left: 4px;
     }
     .OtpInput {
       width: 30px;
@@ -192,3 +287,98 @@
       left: 40px;
     }
   }
+
+  /* Media query for tablets/iPads */
+@media (min-width: 768px) and (max-width: 1024px) {
+  footer {
+    gap: 100px;
+    padding-left: 90px;
+  }
+}
+
+/* Media query for Laptops and Desktops */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 12px;
+   /* height: 27.25rem;*/
+    width: 100%;
+    text-align: left;
+    padding: 15px 90px 3px 35px;
+  }
+
+  .footer-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, auto));
+    column-gap: 150px;
+    /*height: 20.75rem;*/
+    width: 81.61%;
+    align-items: start;
+  }
+
+  .footer-description {
+    width: 279px;
+    text-align: left;
+  }
+
+  .footer-desc-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: #000000;
+  }
+
+  .footer-site-map {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+    width: 185px;
+    text-align: left;
+  }
+
+  .footer-headings {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 32px;
+    color: #000000;
+  }
+
+  .footer-list {
+    margin: 0;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 40px;
+    color: #000000;
+  }
+
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+  }
+
+  .footer-phone p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 32px;
+    color: #000000;
+  }
+
+  #rights {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    width: 215px;
+  }
+}

@@ -138,18 +138,29 @@ body{
 }
 
 .library.completedMovies--bottom, .library.continueWatching--bottom{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    /* grid-template-columns: repeat(4, 1fr); */
     gap: 8px;
-    justify-items: center;
+    align-items: center;
+    width: 100%;
+    /* justify-items: center; */
 }
 
 .library.continueWatching--bottom{
     margin-bottom: 52px;
 }
 
+#slides-container, #slides-container1{
+    overflow: scroll;
+    scroll-behavior: smooth;
+}
+
+.slide, .slide1{
+    flex: 1 0 25%;
+}
+
 .library.moviesBox{
-    width: 100%;
+    width: 25%;
 }
 
 .library.moviesImg{

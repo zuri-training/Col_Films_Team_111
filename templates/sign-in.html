@@ -1,19 +1,22 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="icon" type="images/png" href="/static/logo.png" />
     <title>Sign In</title>
 </head>
 <body>
     <div class="top-container">
         <div class="logo-container">
-            <img class="top-logo" src="images/desktop-logo.png" alt="one-cube logo" srcset="images/logo.png 23w,
+            <img class="top-logo" src="/static/desktop-logo.png" alt="one-cube logo" srcset="images/logo.png 23w,
                     images/desktop-logo.png 92w" sizes="(min-width: 1025px) 92px,
                     23px">
         </div>
@@ -21,14 +24,24 @@
         <div class="form-wrapper">
             <div class="form-content">
                 <h2 class="login-text">Input your login details</h2>
+                {% if messages %}
+                {% for message in messages %}
+                {{message}}
+                {%endfor%}
+                {%endif%}
+
+                
 
                 <form class="sign-in-area" action="" method="post">
+                    {% csrf_token %}
+                    
                     <input class="sign-in-email" type="email" placeholder="Input e-mail address" name="emailInput"><br>
                     <input type="password" name="password" placeholder="Input password"><br>
 
-                    <button type="submit">Sign in</button><br><br>
-                    <a href="" class="forgot-password">Forgot password?</a>
+                    <button type="submit" value="Login">Sign in</button><br><br>
+                    <a href="{%url 'reset_password'%}" class="forgot-password">Forgot password?</a>
                 </form>
+            
             </div>
         </div>
     </div>

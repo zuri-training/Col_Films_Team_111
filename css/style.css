@@ -104,6 +104,57 @@ input::placeholder {
   color: rgba(229, 229, 229, 0.7);
 }
 
+/*otp*/
+.otp-input-container{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.otp-input {
+    width: 75px;
+    color: #ffffff;
+    margin-right:.3rem;
+    text-align: center;
+    font-family: "Raleway", sans-serif;
+    height: 75px;
+    font-weight: 400;
+    font-size: 3rem;
+    line-height: 28px;
+    background: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    transition: all 0.1s;
+  }
+
+  .otp-input:focus {
+    border: 1px solid #40dee8;
+  }
+  .otp-text{
+    font-size: 1.5rem;
+    line-height: 38px;
+  }
+  .expire{
+    font-style: italic;
+  }
+  .time{
+    font-weight: 700;
+    font-style: italic;
+  }
+
+  .reset-password{
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 19px;
+    color: #fca311;
+  }
+  
+  .reset-password:hover{
+    text-decoration: underline;
+
+  }
+/*  */
+
 button {
   color: #010210;
   width: 130.94px;
@@ -242,6 +293,9 @@ footer p {
 
 /* Media query for tablets/iPads */
 @media (min-width: 768px) and (max-width: 1024px) {
+  .otp-text{
+  width: 379px;
+  }
   footer {
     gap: 100px;
     padding-left: 90px;
@@ -261,6 +315,9 @@ footer p {
     left: 70px;
     top: 40px;
   }
+  .otp-text{
+    width: 864px;
+    }
 
   .login-text {
     font-weight: 400;

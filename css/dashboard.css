@@ -53,7 +53,13 @@ li a img {
 }
 li:focus, li:active, li:hover {
     filter: invert(64%) sepia(44%) saturate(1066%) hue-rotate(351deg) brightness(102%) contrast(98%);
-    border-right: 10px solid #119afc;
+    border-right: 10px solid #11c1fc;
+}
+nav .close-icon {
+    position: absolute;
+    top: 5em;
+    right: 4em;
+    width: 40px;
 }
 main {
     background-color: #010210;

@@ -116,6 +116,7 @@ def create_user(request):
         print(session)
         if request.method == 'POST':
             registration_number = request.POST['reg']
+            user_name = request.POST.get('username')
             password = request.POST.get('password1')
             password2 = request.POST.get('password2')
             response = requests.get('http://127.0.0.1:8000/student/')
@@ -155,6 +156,7 @@ def create_user(request):
                         print('yes')
                         ret = NewUser.objects.filter(email=str(student['email']))
                         ret.update(
+                                username = user_name,
                                 first_name=student['first_name'],
                                 last_name=student['last_name'],
                                 college_name=student['institution'],

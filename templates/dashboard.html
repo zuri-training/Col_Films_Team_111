@@ -35,12 +35,14 @@
       <input type="search" name="video-search">
       <input type="text">
     </div>
+    {{user.username}}
     <div class="New-release">
       <h2>New Release</h2>
       {%for film in film%}
       <div class="dashboard-thumbnail-wrapper">
         <div class="dashboard-thumbnail">
-          <img src="{{film.thumbnail.url}}" width="200" alt="" class="dashboard-thumbnail-image">
+          <a href=""></a>
+          <img src="{%static 'logo.png'%}" width="200" alt="" class="dashboard-thumbnail-image">
           <p>{{film.length}}</p>
           <div class="dashboard-thumbnail-info">
             <h3>{{film.title}}</h3>
@@ -60,7 +62,7 @@
         {%for film in film%}
         <div class="dashboard-thumbnail-wrapper">
           <div class="dashboard-thumbnail">
-            <img src="{{film.thumbnail.url}}" width="200" alt="" class="dashboard-thumbnail-image">
+            <img src="{%static 'logo.png'%}" width="200" alt="" class="dashboard-thumbnail-image">
             <p>12:30</p>
             <div class="dashboard-thumbnail-info">
               <h3>{{film.title}}</h3>
@@ -79,7 +81,7 @@
         {%for film in film%}
         <div class="dashboard-thumbnail-wrapper">
           <div class="dashboard-thumbnail">
-            <img src="{{film.thumbnail.url}}" width="200" alt="" class="dashboard-thumbnail-image">
+            <img src="{%static 'logo.png'%}" width="200" alt="" class="dashboard-thumbnail-image">
             <p>12:30</p>
             <div class="dashboard-thumbnail-info">
               <h3>{{film.title}}</h3>

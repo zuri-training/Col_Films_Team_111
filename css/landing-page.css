@@ -570,12 +570,85 @@ h6 {
     line-height: 24px;
   }
 
-  .landing-section-2 button{
+  .landing-section-2 button {
     width: 250px;
     height: 60px;
     font-style: normal;
     font-weight: 700;
     font-size: 20px;
     line-height: 33px;
+  }
+
+  .landing-section-3 {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-content: flex-start;
+    gap: 27px;
+    text-align: left;
+  }
+
+  .featured-movies h3 {
+    width: 174px;
+    height: 47px;
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 47px;
+  }
+
+  .featured-movies p {
+    width: 307px;
+    height: 168px;
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 31px;
+    margin-top: 51px;
+  }
+
+  .landing-movies-thumbnail {
+    height: fit-content;
+  }
+
+  .landing-movie-details {
+    width: 315px;
+  }
+
+  .landing-movie-details h1 {
+    width: 226px;
+    height: 33px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 33px;
+  }
+
+  .star-wrapper {
+    width: 104px;
+    height: 16px;
+  }
+
+  .movie-time {
+    width: 42px;
+    height: 12px;
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 12px;
+    margin-left: 17.33px;
+  }
+
+  .movie-time p {
+    width: 232px;
+    height: 47px;
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
   }
 }

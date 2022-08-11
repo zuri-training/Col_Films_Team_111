@@ -140,6 +140,90 @@ section h1 {
     border-radius: 8px;
     border: 1px solid rgb(86, 87, 91);
 }
+
+/* footer */
+footer {
+    background: white;
+    padding: 3em;
+}
+footer section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+}
+
+footer h4 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 1em 0;
+}
+footer li {
+    list-style-type: none;
+    line-height: 25px;
+}
+footer a {
+    text-decoration: none;
+    color: black;
+}
+footer .rights {
+    text-align: center;
+}
+footer .social-links {
+    display: flex;
+}
+footer .social-links img{
+    width: 24px;
+    height: 24px;
+    margin-right: 1em;
+}
+footer .phone {
+    display: flex;
+    margin: 2em 0;
+}
+
+
+@media (min-width: 768px) {
+    footer {
+       
+    }
+    footer section {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: start;
+        text-align: left;
+        width: 80%;
+        margin: auto;
+            flex-basis: 100%;
+    }
+    footer section div:first-child p {
+        width: 16em;
+        margin: 2em 0;
+        line-height: 28px;
+    }
+    footer h4 {
+        font-size: 20px;
+        font-weight: 600;
+        margin: 1em 0;
+    }
+    footer li {
+        list-style-type: none;
+        line-height: 36px;
+    }
+    footer .rights {
+        width: 80%;
+        text-align: left;
+        margin: 2em auto;
+    }
+    footer .social-links img{
+        width: 24px;
+        height: 24px;
+        
+    }
+}
 @media screen and (min-width: 768px) {
     .header-for-mobile {
         display: none;
@@ -170,6 +254,7 @@ section h1 {
         padding: 0.6em;
     }
     nav {
+
         position: fixed;
         top: unset;
         left: 0;

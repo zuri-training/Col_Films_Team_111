@@ -18,6 +18,9 @@ h6 {
   margin: 0;
 }
 
+
+
+/* SIGN-IN STYLES */
 .top-container {
   background-color: #010210;
   position: relative;
@@ -140,6 +143,11 @@ button:disabled {
   color: #fca311;
 }
 
+/* END OF SIGN-IN STYLES */
+
+
+
+
 footer {
   display: flex;
   flex-direction: column;
@@ -250,6 +258,7 @@ footer p {
 
 /* Media query for Laptops and Desktops */
 @media (min-width: 1025px) {
+  /* SIGN-IN STYLES */
   .top-container {
     height: 100vh;
   }
@@ -294,6 +303,10 @@ footer p {
     text-decoration: underline;
   }
 
+  /* SIGN-IN STYLES */
+
+
+  
   footer {
     display: flex;
     flex-direction: column;

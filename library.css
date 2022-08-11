@@ -64,6 +64,39 @@ body{
     margin-top: 19px;
 }
 
+.mobileBar{
+    position: absolute;
+    top: 170px;
+    left: -100%;
+    padding-left: 20px;
+    background: #000;
+    width: 100vw;
+    height: 100vh;
+    transition: all ease-in 0.3s;
+    z-index: 99;
+}
+
+.mobileBar.active{
+    left: 0;
+}
+
+.mobileBarLink{
+    color: white;
+}
+
+.mobileBarList{
+    display: flex;
+    gap: 18px;
+    margin-bottom: 19px;
+}
+
+.mobileBarList p{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+}
+
 .library.search, .library.category{
     padding: 5px 8px;
     background: #FCA311;
@@ -308,13 +341,43 @@ body{
         padding-left: 36px;
     }
 
+    .sideBarHeading{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .library.sideBar{
+        padding-left: 10px;
+    }
+
+    .library.sideBar.active {
+        display: block;
+        width: 3%;
+        padding-top: 32px;
+        padding-left: 0;
+    }
+
+    .library.sideBar.active .sideBarHeadingListP.active{
+        display: none;
+    }
+
+    .library.sideBar.active .sideBarHeadingList.comp{
+        display: none;
+    }
+
     .library.main{
         flex-direction: row;
         align-items: flex-start;
+        gap: 10px;
     }
 
     .moviesSection{
         width: 80%;
+    }
+
+    .moviesSection.active{
+        width: 97%;
     }
 
     .sideBarHeading{

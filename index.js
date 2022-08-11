@@ -10,6 +10,6 @@ function openNavbar() {
 function closeNavbar() {
     menu.classList.toggle('active')
 }
-menuBar.addEventListener("click", openNavbar)
 
+menuBar.addEventListener("click", openNavbar)
 close.addEventListener("click", closeNavbar)

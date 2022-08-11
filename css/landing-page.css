@@ -334,9 +334,12 @@ h6 {
   text-align: left;
 }
 
-.faq-wrapper{
+.faq-wrapper {
   width: 100%;
+  background-color: #181925;
   text-align: left;
+  padding: 25px;
+  position: relative;
 }
 
 .faq h2 {
@@ -348,9 +351,55 @@ h6 {
 }
 
 .questions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 44px;
   color: #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.questions:last-child{
+  border: none;
+}
+
+.questions p {
+  margin: 0;
+}
+
+.faq-image-wrapper {
+  /* position: relative; */
+  text-align: center;
+  width: 112.77px;
+  height: 97.22px;
+  margin: auto;
+}
+
+.faq-oval {
+  width: 13.72px;
+  height: 12.72px;
+  position: absolute;
+  right: 140px;
+  top: 22px;
+}
+
+.faq-plus {
+  fill: none;
+}
+
+.faq-cross {
+  width: 13.57px;
+  height: 13.57px;
+  position: absolute;
+  left: 140px;
+  top: 63px;
+}
+
+.faq-speaker {
+  width: 89px;
+  height: 90px;
 }

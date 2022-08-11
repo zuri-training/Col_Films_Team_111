@@ -239,8 +239,15 @@ h6 {
 }
 
 .landing-section-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
   text-align: center;
   background-color: #010210;
+  width: 100%;
+  min-height: 900px;
+  padding: 24px;
 }
 
 .landing-section-3 h3 {
@@ -264,7 +271,7 @@ h6 {
   align-items: center;
   gap: 0;
   width: 257px;
-  height: 379px;
+  /* height: 379px; */
   margin: auto;
 }
 
@@ -324,4 +331,26 @@ h6 {
   font-size: 10px;
   line-height: 12px;
   color: #010210;
+  text-align: left;
+}
+
+.faq-wrapper{
+  width: 100%;
+  text-align: left;
+}
+
+.faq h2 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 44px;
+  color: #e5e5e5;
+}
+
+.questions {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 44px;
+  color: #e5e5e5;
 }

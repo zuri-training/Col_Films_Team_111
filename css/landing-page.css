@@ -651,4 +651,25 @@ h6 {
     font-size: 10px;
     line-height: 12px;
   }
+
+  .faq-wrapper{
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+  }
+
+  .faq-image-wrapper {
+    width: 509.47px;
+    height: 441px;
+  }
+
+  .faq-speaker {
+    width: 301px;
+    height: 308px;
+  }
+
+  .faq {
+    width: 501px;
+    height: 358px;
+  }
 }

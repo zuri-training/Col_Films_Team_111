@@ -708,7 +708,7 @@ footer p {
     border: none;
   }
 
-  .forgot-password-form input {
+  .forgot-password-form input[type="email"] {
     width: 560px;
     height: 96px;
   }

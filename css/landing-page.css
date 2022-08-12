@@ -473,6 +473,8 @@ h6 {
   }
 
   .clapperboard {
+    position: relative;
+    left: 80px;
     width: 499px;
     height: 499px;
     border-radius: 50%;
@@ -486,6 +488,7 @@ h6 {
     width: 554px;
     height: 510px;
     text-align: left;
+    padding-left: 60px;
   }
 
   .landing-intro h2 {
@@ -517,7 +520,6 @@ h6 {
     font-size: 24px;
     line-height: 40px;
     margin: 47px auto;
-    white-space: nowrap;
   }
 
   .landing-intro button {
@@ -562,6 +564,11 @@ h6 {
   .landing-section-2-image {
     width: 320px;
     height: 273.64px;
+  }
+
+  .landing-section-2-image img {
+    width: 276.36px;
+    height: 197.27px;
   }
 
   .landing-section-2-content h4 {
@@ -704,10 +711,55 @@ h6 {
     margin-bottom: 7px;
   }
 
-  .answers {
+  .answer1,
+  .answer2,
+  .answer3,
+  .answer4,
+  .answer5 {
     display: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #ffffffb6;
   }
 
-  .faq-plus:focus {
+  .answer2 a {
+    color: #fca311;
+  }
+
+  .answer2 a:hover {
+    cursor: pointer;
+    color: #e5e5e5;
+  }
+
+  .question1:hover,
+  .question2:hover,
+  .question3:hover,
+  .question4:hover,
+  .question5:hover {
+    cursor: pointer;
+  }
+
+  .question1:hover .answer1,
+  .question2:hover .answer2,
+  .question3:hover .answer3,
+  .question4:hover .answer4,
+  .question5:hover .answer5 {
+    display: block;
+  }
+
+  .faq-cross {
+    width: 61.32px;
+    height: 61.32px;
+    top: 310px;
+    left: 200px;
+  }
+
+  .faq-oval {
+    width: 61.97px;
+    height: 61.97px;
+    right: 730px;
+    top: 180px;
   }
 }

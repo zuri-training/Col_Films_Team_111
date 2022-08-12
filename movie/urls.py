@@ -1,7 +1,8 @@
 from django.urls import path
-from .views import DeleteMovie, my_movies, modal, movie_detail, dashboard, create_movie, list_movie,add_favourite, list_favourites, add_likes, add_dislikes
+from .views import DeleteMovie, index, my_movies, modal, movie_detail, dashboard, create_movie, list_movie,add_favourite, list_favourites, add_likes, add_dislikes
 
 urlpatterns = [
+    path('', index, name="home"),
     path('add_movie/', create_movie, name="add_movie"),
     path('delete/<int:pk>/', DeleteMovie.as_view(), name="delete"),
     path('list_movie/', list_movie, name="list_movie"),

@@ -147,7 +147,7 @@
                         <p class="mobileBarListP">Settings</p>
                     </li>
                 </a>
-                <a class="mobileBarLink" href="#">
+                <a class="mobileBarLink" href="{%url 'user_logout'%}">
                     <li class="mobileBarList">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M4.5 22.5H13.5C13.8977 22.4996 14.279 22.3414 14.5602 22.0602C14.8414 21.779 14.9996 21.3977 15 21V18.75H13.5V21H4.5V3H13.5V5.25H15V3C14.9996 2.6023 14.8414 2.221 14.5602 1.93978C14.279 1.65856 13.8977 1.5004 13.5 1.5H4.5C4.1023 1.5004 3.721 1.65856 3.43978 1.93978C3.15856 2.221 3.0004 2.6023 3 3V21C3.0004 21.3977 3.15856 21.779 3.43978 22.0602C3.721 22.3414 4.1023 22.4996 4.5 22.5Z" fill="white"/>
@@ -415,8 +415,8 @@
     <footer>
         <div class="footer-wrapper">
             <div class="footer-description">
-                <img class="footer-logo" src="images/desktop-footer-logo.png" alt="one-cube logo" srcset="images/mobile-footer-logo.png 77w,
-                        images/desktop-footer-logo.png 95w" sizes="(min-width: 1025px) 95px,
+                <img class="footer-logo" src="{%static 'desktop-footer-logo.png'%}" alt="one-cube logo" srcset="{%static 'mobile-footer-logo.png'%} 77w,
+                        {%static 'desktop-footer-logo.png'%} 95w" sizes="(min-width: 1025px) 95px,
                         77px">
 
                 <p class="footer-desc-text">Your one stop streaming platform for short college films by college students
@@ -456,7 +456,7 @@
                         19.67px">
                     </a>
                     <a href="" class="footer-link">
-                        <img src="{%static 'desktop-twitter.png' %}" alt="twitter-icon" srcset="{%static 'desktop-twitter.png} 35.83w,
+                        <img src="{%static 'desktop-twitter.png' %}" alt="twitter-icon" srcset="{%static 'desktop-twitter.png'%} 35.83w,
                         {%static 'twitter.png'%} 22.4w" sizes="(min-width: 1025px) 35.83px,
                         22.4px">
                     </a>

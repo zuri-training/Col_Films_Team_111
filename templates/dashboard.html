@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="{%static 'index.css' %}">
+  <link rel="stylesheet" href="{%static 'css/library.css' %}">
   <title>Onecube</title>
 
 </head>
@@ -28,13 +28,14 @@
       <img src="" alt="profile-picture" class="profile-picture">
     </div>
   </header>
-
+  {%if user.is_authenticated%}
   <div class="dashboard-top-container">
     <div class="mobile-dashboard-input">
       <!-- Hamburger -->
       <input type="search" name="video-search">
       <input type="text">
     </div>
+    
     {{user.username}}
     <div class="New-release">
       <h2>New Release</h2>
@@ -94,77 +95,80 @@
         </div>
         {%endfor%}
       </div>
-
-      <footer>
-        <div class="footer-wrapper">
-          <div class="footer-description">
-            <img class="footer-logo" src="images/desktop-footer-logo.png" alt="one-cube logo" srcset="images/mobile-footer-logo.png 77w,
-                        images/desktop-footer-logo.png 95w" sizes="(min-width: 1025px) 95px,
-                        77px">
-
-            <p class="footer-desc-text">Your one stop streaming platform for short college films by college students
-            </p>
+    </div>
+    {%else%}
+        <h1>You're Not Authorized To Be Here</h1>
+        {%endif%}
+        <footer>
+          <div class="footer-wrapper">
+              <div class="footer-description">
+                  <img class="footer-logo" src="{%static 'desktop-footer-logo.png'%}" alt="one-cube logo" srcset="{%static 'mobile-footer-logo.png'%} 77w,
+                          {%static 'desktop-footer-logo.png'%} 95w" sizes="(min-width: 1025px) 95px,
+                          77px">
+      
+                  <p class="footer-desc-text">Your one stop streaming platform for short college films by college students
+                  </p>
+              </div>
+      
+              <div class="footer-site-map">
+                  <h2 class="footer-headings">Site Map</h2>
+                  <ul class="footer-list">
+                      <li>
+                          <a href="" class="footer-link">Home</a>
+                      </li>
+                      <li>
+                          <a href="" class="footer-link">FAQ</a>
+                      </li>
+                      <li>
+                          <a href="" class="footer-link">Privacy Policies</a>
+                      </li>
+                      <li>
+                          <a href="" class="footer-link">Registration</a>
+                      </li>
+                      <li>
+                          <a href="" class="footer-link">About Us </a>
+                      </li>
+                      <li>
+                          <a href="" class="footer-link">Terms of Use</a>
+                      </li>
+                  </ul>
+              </div>
+      
+              <div class="footer-contact">
+                  <h2 class="footer-headings">Contact us</h2>
+                  <div class="socials-icon">
+                      <a href="" class="footer-link">
+                          <img src="{%static 'desktop-insta.png'%}" alt="instagram-icon" srcset="{%static 'desktop-insta.png'%} 31.47w,
+                          {%static 'insta.png' %} 19.67w" sizes="(min-width: 1025px) 31.47px,
+                          19.67px">
+                      </a>
+                      <a href="" class="footer-link">
+                          <img src="{%static 'desktop-twitter.png' %}" alt="twitter-icon" srcset="{%static 'desktop-twitter.png'%} 35.83w,
+                          {%static 'twitter.png'%} 22.4w" sizes="(min-width: 1025px) 35.83px,
+                          22.4px">
+                      </a>
+                      <a href="" class="footer-link">
+                          <img src="{%static 'desktop-fb.png'%}" alt="fb-icon" srcset="{%static 'desktop-fb.png'%} 19w,
+                          {%static 'fb.png'%} 11.88w" sizes="(min-width: 1025px) 19px,
+                          11.88px">
+                      </a>
+                      <a href="" class="footer-link">
+                          <img src="{%static 'desktop-mail.png'%}" alt="mail-icon" srcset="{%static 'desktop-mail.png'%} 31.3w,
+                          {%static 'mail.png'%} 19.56w" sizes="(min-width: 1025px) 31.3px,
+                          19.56px">
+                      </a>
+                  </div>
+                  <div class="footer-phone">
+                      <img src="{%static 'desktop-phone.png' %}" alt="phone-icon" srcset="{%static 'desktop-phone.png' %} 29.19w,
+                          {%static 'phone.png'%} 18.24w" sizes="(min-width: 1025px) 29.19px,
+                          18.24px">
+      
+                      <p>+2348116455541</p>
+                  </div>
+              </div>
+              <p id="rights">All Rights Reserved</p>
           </div>
-
-          <div class="footer-site-map">
-            <h2 class="footer-headings">Site Map</h2>
-            <ul class="footer-list">
-              <li>
-                <a href="" class="footer-link">Home</a>
-              </li>
-              <li>
-                <a href="" class="footer-link">FAQ</a>
-              </li>
-              <li>
-                <a href="" class="footer-link">Privacy Policies</a>
-              </li>
-              <li>
-                <a href="" class="footer-link">Registration</a>
-              </li>
-              <li>
-                <a href="" class="footer-link">About Us </a>
-              </li>
-              <li>
-                <a href="" class="footer-link">Terms of Use</a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="footer-contact">
-            <h2 class="footer-headings">Contact us</h2>
-            <div class="socials-icon">
-              <a href="" class="footer-link">
-                <img src="images/desktop-insta.png" alt="instagram-icon" srcset="images/desktop-insta.png 31.47w,
-                        images/insta.png 19.67w" sizes="(min-width: 1025px) 31.47px,
-                        19.67px">
-              </a>
-              <a href="" class="footer-link">
-                <img src="images/desktop-twitter.png" alt="twitter-icon" srcset="images/desktop-twitter.png 35.83w,
-                        images/twitter.png 22.4w" sizes="(min-width: 1025px) 35.83px,
-                        22.4px">
-              </a>
-              <a href="" class="footer-link">
-                <img src="images/desktop-fb.png" alt="fb-icon" srcset="images/desktop-fb.png 19w,
-                        images/fb.png 11.88w" sizes="(min-width: 1025px) 19px,
-                        11.88px">
-              </a>
-              <a href="" class="footer-link">
-                <img src="images/desktop-mail.png" alt="mail-icon" srcset="images/desktop-mail.png 31.3w,
-                        images/mail.png 19.56w" sizes="(min-width: 1025px) 31.3px,
-                        19.56px">
-              </a>
-            </div>
-            <div class="footer-phone">
-              <img src="images/desktop-phone.png" alt="phone-icon" srcset="images/desktop-phone.png 29.19w,
-                        images/phone.png 18.24w" sizes="(min-width: 1025px) 29.19px,
-                        18.24px">
-
-              <p>+2348116455541</p>
-            </div>
-          </div>
-          <p id="rights">All Rights Reserved</p>
-        </div>
       </footer>
-      <script src="index.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>

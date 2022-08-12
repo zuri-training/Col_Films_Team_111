@@ -5,6 +5,9 @@ from django.views.generic.edit import DeleteView
 from moviepy.editor import *
 
 
+def index(request):
+    return render(request, 'index.html', {})
+
 def modal(request):
     return render(request, 'video_modal.html', {})
 
@@ -126,6 +129,10 @@ def my_movies(request):
     if not request.user:
         permission_error = "You Don't Have Permission To View This Page"
         return render(request, 'my_movies.html', {'permission_error':permission_error})
-
+    favs = Movie.objects.filter(favourites=request.user)
     movs = Movie.objects.filter(uploader=request.user)
-    return render(request, 'my_movies.html', {'movs':movs})
+    data = {
+        'movs':movs,
+        'favs':favs
+        }
+    return render(request, 'library.html', data)

@@ -473,37 +473,50 @@ h6 {
   }
 
   .clapperboard {
-    width: 399px;
-    height: 399px;
+    width: 499px;
+    height: 499px;
     border-radius: 50%;
   }
 
   .landing-intro-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 554px;
+    height: 510px;
     text-align: left;
   }
 
   .landing-intro h2 {
     font-style: normal;
     font-weight: 500;
-    font-size: 40px;
+    font-size: 35px;
     line-height: 56px;
-    width: 476px;
+    width: 356px;
     height: 112px;
   }
 
-  .landing-intro p {
-    width: 554px;
-    /* height: 120px; */
+  #first-text {
+    width: 430px;
+    height: 120px;
     font-family: "Raleway";
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
     line-height: 40px;
-    margin: 57px auto;
+    /* margin: 57px auto; */
   }
 
-  .landing-intro p:first-child {
-    margin-top: 14px;
+  #second-text {
+    width: 313px;
+    height: 80px;
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 40px;
+    margin: 47px auto;
   }
 
   .landing-intro button {
@@ -652,10 +665,11 @@ h6 {
     line-height: 12px;
   }
 
-  .faq-wrapper{
+  .faq-wrapper {
     display: flex;
     flex-direction: row;
     height: fit-content;
+    padding: 208px 147px;
   }
 
   .faq-image-wrapper {
@@ -671,5 +685,28 @@ h6 {
   .faq {
     width: 501px;
     height: 358px;
+  }
+
+  .faq h2 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+    margin-bottom: 45px;
+  }
+
+  .faq p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 44px;
+    margin-bottom: 7px;
+  }
+
+  .answers {
+    display: none;
+  }
+
+  .faq-plus:focus {
   }
 }

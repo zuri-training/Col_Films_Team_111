@@ -1,6 +1,8 @@
 from django.shortcuts import render,redirect
 # Imports for the models, serializers
-from django.contrib.auth import get_user_model
+from django.contrib.auth import get_user_model,authenticate,login,logout
+from django.contrib import messages
+
 from django.contrib.auth.models import User
 from .models import NewUser, Otp
 # Imports For the api
@@ -9,6 +11,9 @@ import requests
 from django.core.mail import send_mail
 import math
 import random
+
+#import forms from form.py
+from .forms import LoginForm
 
 User = get_user_model()
 
@@ -46,13 +51,13 @@ def get_reg(request):
                 if not Otp.objects.filter(registration_number=student['registration_number']):
                     otp = generate_otp()
                     add_otp = Otp.objects.create(registration_number=student['registration_number'], otp_code=otp)
-                    # send_mail(
-                    #     'Onecube Otp',
-                    #     f'{otp} is your Otp',
-                    #     'e82717bd4c6dbd',
-                    #     ['yabahe8358@galotv.com'],
-                    #     fail_silently=False
-                    # )
+                    send_mail(
+                        'Onecube Otp',
+                        f'{otp} is your Otp',
+                        'projectcolfilms@gmail.com',
+                        [student['email']],
+                        fail_silently=False
+                    )
                 else:
                     print('Otp already Exists')
 
@@ -116,6 +121,7 @@ def create_user(request):
         print(session)
         if request.method == 'POST':
             registration_number = request.POST['reg']
+            user_name = request.POST.get('username')
             password = request.POST.get('password1')
             password2 = request.POST.get('password2')
             response = requests.get('http://127.0.0.1:8000/student/')
@@ -155,6 +161,7 @@ def create_user(request):
                         print('yes')
                         ret = NewUser.objects.filter(email=str(student['email']))
                         ret.update(
+                                username = user_name,
                                 first_name=student['first_name'],
                                 last_name=student['last_name'],
                                 college_name=student['institution'],
@@ -175,3 +182,21 @@ def create_user(request):
                 pass
 
     return render(request, 'create_user.html', {'data':reg, 'error':error, 'no_permission':no_permission})
+
+def user_login(request):
+    if request.method == 'POST':
+        email = request.POST.get('emailInput','')
+        password = request.POST.get('password','')
+        user = authenticate(request, email = email, password = password)
+        if user is not None:
+            
+            login(request, user)
+        #redirect to dashboard
+            return redirect("dashboard", user.id)
+        else:
+            messages.info(request, "Email or password is incorrect")
+    return render(request, 'sign_in.html')
+
+def user_logout(request):
+    logout(request)
+    return redirect('home')

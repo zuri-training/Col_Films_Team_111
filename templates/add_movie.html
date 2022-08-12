@@ -1,0 +1,13 @@
+{{user.id}}
+{%if user.is_authenticated %}
+<form enctype="multipart/form-data" method="POST" >
+    {%csrf_token%}
+    {{form.as_p}}
+    <button type="submit">Post</button>
+</form>
+{%else%}
+<h1>You're Not Authorized To Be Here!!!</h1>
+{%endif%}
+{%if length_error %}
+<h1>{{length_error}}</h1>
+{%endif%}

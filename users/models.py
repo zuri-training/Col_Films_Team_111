@@ -26,12 +26,12 @@ class NewUser(AbstractBaseUser, PermissionsMixin):
     reg_number = models.CharField(max_length=10)
     email = models.EmailField(_('email address'), unique= True)
     college_name = models.CharField(max_length=100)
-    user_name = models.CharField(max_length=150, blank=True)
+    username = models.CharField(max_length=150, blank=True)
     first_name = models.CharField(max_length=150, blank=True)
     last_name = models.CharField(max_length=150, null=True, blank=True)
     start_date = models.DateTimeField(default=timezone.now)
     is_staff = models.BooleanField(default=False)
-    is_active = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
 
     otp = models.CharField(max_length=6, null=True, blank=True)
 

@@ -1,0 +1,33 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for film in film%}
+<p>{{film.title}}</p>
+<p>{{film.description}}</p>
+<p>{{film.category}}</p>
+<p>{{film.uploader}}</p>
+<video controls width="250" poster="{{film.thumbnail.url}}">
+    <source src="{{film.movie.url}}" type="video/mp4">
+</video>
+<p>{{film.movie}}</p>
+<p>{{film.length}}</p>
+<p>{{film.upload_date}}</p>
+<a href="{%url 'add_favourites' film.id %}" >Add To Favourites</a><br>
+<a href="{%url 'detail' film.id %}" >Watch</a>
+
+<hr>
+<br>
+
+{%endfor%}
+{%for i in lent%}
+<p>{{i}}</p>
+{%endfor%}
+</body>
+</html>

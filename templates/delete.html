@@ -1,0 +1,24 @@
+
+{% extends 'get_otp.html' %}
+<title>{% block title %}Delete{% endblock%}</title>
+
+{% block posts %}
+{% if user.is_authenticated %}
+    {% if user.id == object.uploader.id %} <!-- This makes use of the user model to authenticate who can edit or delete posts 
+    by comparing the author user id with the currently logged in user-->
+        <h1>Delete Article</h1>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <p>Are you sure you want to delete "{{object}}"</p>
+
+            <input type="submit" value="Confirm">
+        </form>
+    {% else %}
+        YOU'RE NOT AUTHORIZED TO DELETE THIS POST
+    {% endif %}
+{% else %}
+    YOU CAN'T DELETE WHAT YOU DIDN'T POST, BE GONE!!!
+{% endif %}
+{% endblock %}

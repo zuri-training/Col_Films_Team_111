@@ -24,9 +24,10 @@
         </div>
     </header>
     {% if access_error %}
-    <h1>{{access_error}}</h1>
+    <h1 style="color: red;">{{access_error}}</h1>
     {%else%}
     <main>
+        {% block delete %}
         <form method="POST" id="form" action="">
             {% csrf_token %}
             <div class="content" id="step2">
@@ -86,6 +87,7 @@
 
 
         </form>
+        {%endblock%}
     </main>
     {%endif%}
     

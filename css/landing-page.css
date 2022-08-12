@@ -517,6 +517,7 @@ h6 {
     font-size: 24px;
     line-height: 40px;
     margin: 47px auto;
+    white-space: nowrap;
   }
 
   .landing-intro button {

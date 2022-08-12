@@ -51,13 +51,13 @@ def get_reg(request):
                 if not Otp.objects.filter(registration_number=student['registration_number']):
                     otp = generate_otp()
                     add_otp = Otp.objects.create(registration_number=student['registration_number'], otp_code=otp)
-                    # send_mail(
-                    #     'Onecube Otp',
-                    #     f'{otp} is your Otp',
-                    #     'e82717bd4c6dbd',
-                    #     ['yabahe8358@galotv.com'],
-                    #     fail_silently=False
-                    # )
+                    send_mail(
+                        'Onecube Otp',
+                        f'{otp} is your Otp',
+                        'projectcolfilms@gmail.com',
+                        [student['email']],
+                        fail_silently=False
+                    )
                 else:
                     print('Otp already Exists')
 

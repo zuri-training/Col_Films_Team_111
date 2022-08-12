@@ -81,12 +81,12 @@ def add_favourite(request, id):
         film.favourites.remove(request.user)
     else:
         film.favourites.add(request.user)
-        return redirect('favourites')
-    return redirect('favourites')
+        return redirect('library')
+    return redirect('library')
 
-def list_favourites(request):
-    favs = Movie.objects.filter(favourites=request.user)
-    return render(request, 'favourites.html', {'favs':favs})
+# def list_favourites(request):
+#     favs = Movie.objects.filter(favourites=request.user)
+#     return render(request, 'favourites.html', {'favs':favs})
 
 class DeleteMovie(DeleteView):
     model = Movie

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/library-style.css">
+    <link rel="stylesheet" type="text/css" href="./css/all.min.css" />
+	<script src="fontawesome-all.js"></script>
+    <title>Library</title>
+</head>
+<body>
+    <div class="setting-container">
+        <nav>
+            <div class="logo-container">
+                <img class="nav-logo" src="images/desktop-logo.png" alt="one-cube logo">
+            </div>
+            <div class="search-cat">
+              <div class="form-wrapper"> 
+                     <div class="form-content">
+                       <form class="search-cat-area" action="" method="post">
+                            <input class="search-sec" type="text" placeholder="Search" name="emailInput">
+                            <select name="cat" id="">
+                                <option value="Category">Category</option>
+                                <option value="Category">col</option>
+                            </select>
+                        </form>
+                     </div>
+                 </div>
+            </div>
+            <div class="settings">
+                <div class="ince-settings">
+                    <i class="fas fa-bell"></i>
+                </div> 
+                <div class="ince-settings">
+                    <i class="fas fa-search"></i>
+                </div> 
+                <div class="display-pic">
+                    <img src="./images/profile.jpg" alt="profile-pic" class="profile">
+                </div>
+            </div>
+        </nav>
+
+        <div class="search-body">
+            <div class="form-wrapper"> 
+                   <div class="form-content">
+                     <form class="search-cat-body" action="" method="post">
+                        <a href=".right-section">
+                            <div class="hamburger">
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                            </div> 
+                        </a> 
+                        <input class="search-sec" type="text" placeholder="Search" name="emailInput">
+                          <select name="cat" id="">
+                              <option value="Category">Category</option>
+                              <option value="Category">col</option>
+                          </select>
+                      </form>
+                   </div>
+               </div>
+          </div>
+            <section class="main-container">
+                <div class="right-section">
+                    <div class="sidebar">
+                        <div class="top-icons">
+                            <div class="ficon">
+                                <h2>Menu</h2>
+                            </div>
+                            <div class="rside">
+                                <div class="ince">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                                <h2>Home</h2>
+                            </div>
+                            <div class="rside">
+                                <div class="ince hastag">
+                                    <i class="fas fa-user-check"></i>
+                                </div>
+                                <h2>Following</h2>
+                            </div>
+                            <div class="rside">
+                            <div class="ince">
+                                <i class="fas fa-folder-open"></i>
+                            </div>    
+                            <h2>Library</h2>
+                            </div>
+                            <div class="rside">
+                                <div class="ince">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <h2>New</h2>
+                            </div>
+                            <div class="rside">
+                                <div class="ince bookmarks">
+                                    <i class="fas fa-file"></i>
+                                </div>
+                                <h2>MyList</h2>
+                            </div>
+                            <div class="rside">
+                            <div class="ince lists">
+                                <i class="fas fa-video"></i>
+                            </div> 
+                            <h2>Video</h2>
+                            </div>
+                            <div class="rside">
+                                <div class="ince">
+                                    <i class="fas fa-cog"></i>
+                                </div>
+                                <h2>Settings</h2>
+                            </div>
+                            <div class="rside">
+                                <div class="ince">            
+                                    <i class="fas fa-sign-out-alt"></i>
+                                </div>
+                                <h2>Logout</h2>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="flex-con">
+                    <div class="main-section">
+                        <div class="register">
+                                <h2>Settings</h2>
+                                <form id="register" method="POST" auto-complete="off">
+                                    <label class="flabel">Profile </label><span style="color: #fca311 !important; display: inline; float: right;"><i class="fa fa-chevron-circle-right"></i></span><br>
+                                    <input type="text" name="fname" placeholder="Name, Username, Email address, Profile..." id="name" maxlength="45" required><br><br>
+                                    <label>Password </label><span style="color: #a99d9d !important; display: inline; float: right;"><i class="fa fa-chevron-circle-down"></i></span><br>
+                                    <input type="password" name="password" placeholder="Your email address is vera_agu@gmail.com" id="password" pattern="(?=.*\d) (?=.*[a-z]) (?=.*[A-Z]).{8,}" title="Must contain one number, uppercase, lowercase, atleast 8 or more character" required><br><br>
+                                    <label class="flabel">Notification </label><span style="color: #a99d9d !important; display: inline; float: right;"><i class="fa fa-chevron-circle-down"></i></span><br>
+                                    <input type="text" name="fname" placeholder="OneCube will send you notifications" id="name" maxlength="45" required><br><br>
+                                    <label>Time Zone </label><span style="color: #a99d9d !important; display: inline; float: right;"><i class="fa fa-chevron-circle-down"></i></span><br>
+                                    <input type="text" name="fname" placeholder="Your time zone is currently set towest African" id="name" maxlength="45" required><br><br>
+                                    <label>Deactivate Account </label><span class="deactivate-button" style="color: #fca311 !important; display: inline; float: right;"><button><a href="">Deactivate</a></button></span><br>
+                                    <input type="text" name="lname" placeholder="If you no longer want your account" id="name" maxlength="45" required><br><br>
+                                                                       
+                                </form>
+                        </div>
+                    </div>
+                    <div class="sub-section">
+                        <div class="register">
+                                <h2>Settings</h2>
+                                <form id="register" method="POST" auto-complete="off">
+                                    <label class="flabel"><a href="settings.html">&lt;</a> &nbsp; Profile </label>
+                                    <span style="background-color: red; 
+                                    display: inline; 
+                                    float: right;
+                                    width: 100px;
+                                    height: 100px;
+                                    border-radius: 50%;
+                                    font-weight: 400;
+                                    font-size: 4rem;
+                                    background-color: #d4cece;
+                                    color: #a99d9d;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    margin-right: 1rem;">
+                                        <i class="fas fa-user-edit"></i>
+                                    </span>
+                                    <br>
+                                    <p class="profile-text">Update profile picture</p>                                  
+                                </form>
+                                <!-- <div class="section-upload">
+                                    <div class="avatar-upload"><i class="fas fa-user-edit"></i></div>
+                                    <div class="upload-link"><a href="">Upload</a></div>
+                                    <div class="upload-btn"><a href="">Save</a></div>
+                                </div> -->
+                                <br><br><br>
+                                <div class="upload-form">
+                                    <h2>Name, Username, Email address</h2>
+                                    <form id="upload-form" method="POST" auto-complete="off">
+                                        <input type="text" name="fname" placeholder="Fullname" id="fname" maxlength="45" required><br><br>
+                                        <input type="text" name="Uname" placeholder="Username" id="uname" required><br><br>
+                                        <input type="text" name="Email" placeholder="Email address" id="email" maxlength="45" required><br><br>
+                                        <button><a href="">Save</a></button>                      
+                                    </form>
+                                </div>
+
+                            </div>
+                    </div>
+                </div>
+
+            </section>
+                        
+        
+       
+    </div>
+
+    <footer>
+        <div class="footer-wrapper">
+            <div class="footer-description">
+                <img class="footer-logo" src="images/desktop-footer-logo.png" alt="one-cube logo" srcset="images/mobile-footer-logo.png 77w,
+                        images/desktop-footer-logo.png 95w" sizes="(min-width: 1025px) 95px,
+                        77px">
+
+                <p class="footer-desc-text">Your one stop streaming platform for short college films by college students
+                </p>
+            </div>
+
+            <div class="footer-site-map">
+                <h2 class="footer-headings">Site Map</h2>
+                <ul class="footer-list">
+                    <li>
+                        <a href="" class="footer-link">Home</a>
+                    </li>
+                    <li>
+                        <a href="" class="footer-link">FAQ</a>
+                    </li>
+                    <li>
+                        <a href="" class="footer-link">Privacy Policies</a>
+                    </li>
+                    <li>
+                        <a href="" class="footer-link">Registration</a>
+                    </li>
+                    <li>
+                        <a href="" class="footer-link">About Us </a>
+                    </li>
+                    <li>
+                        <a href="" class="footer-link">Terms of Use</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h2 class="footer-headings">Contact us</h2>
+                <div class="socials-icon">
+                    <a href="" class="footer-link">
+                        <img src="images/desktop-insta.png" alt="instagram-icon" srcset="images/desktop-insta.png 31.47w,
+                        images/insta.png 19.67w" sizes="(min-width: 1025px) 31.47px,
+                        19.67px">
+                    </a>
+                    <a href="" class="footer-link">
+                        <img src="images/desktop-twitter.png" alt="twitter-icon" srcset="images/desktop-twitter.png 35.83w,
+                        images/twitter.png 22.4w" sizes="(min-width: 1025px) 35.83px,
+                        22.4px">
+                    </a>
+                    <a href="" class="footer-link">
+                        <img src="images/desktop-fb.png" alt="fb-icon" srcset="images/desktop-fb.png 19w,
+                        images/fb.png 11.88w" sizes="(min-width: 1025px) 19px,
+                        11.88px">
+                    </a>
+                    <a href="" class="footer-link">
+                        <img src="images/desktop-mail.png" alt="mail-icon" srcset="images/desktop-mail.png 31.3w,
+                        images/mail.png 19.56w" sizes="(min-width: 1025px) 31.3px,
+                        19.56px">
+                    </a>
+                </div>
+                <div class="footer-phone">
+                    <img src="images/desktop-phone.png" alt="phone-icon" srcset="images/desktop-phone.png 29.19w,
+                        images/phone.png 18.24w" sizes="(min-width: 1025px) 29.19px,
+                        18.24px">
+
+                    <p>+2348116455541</p>
+                </div>
+            </div>
+            <p id="rights">All Rights Reserved</p>
+        </div>
+    </footer>
+
+</body>
+</html>

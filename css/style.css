@@ -146,11 +146,6 @@ button:disabled {
 /* END OF SIGN-IN STYLES */
 
 
-/* LANDING  PAGE STYLES*/
-
-
-
-
 footer {
   display: flex;
   flex-direction: column;
@@ -306,8 +301,7 @@ footer p {
     text-decoration: underline;
   }
 
-  /* SIGN-IN STYLES */
-
+  /* END OF SIGN-IN STYLES */
 
   
   footer {

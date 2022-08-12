@@ -30,7 +30,14 @@
                 </div>
                 <div class="library header category">
                     <div class="library header categoryWrap">
-                        <input type="text" placeholder="Category">
+                        
+                        <input type="" value="{{cat}}" placeholder="Category">
+                        <select name="" id="">
+                            {%for cat in cats%}
+                           <option value="">{{cat}}</option> 
+                            {%endfor%}
+                        </select>
+                        
                         <svg width="17" height="9" viewBox="0 0 17 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M15.4611 1.34753L9.76434 7.04425C9.09156 7.71702 7.99066 7.71702 7.31788 7.04425L1.62109 1.34753" stroke="#8A8989" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
@@ -49,7 +56,7 @@
                     </svg>
                 </div>
                 <div class="libray profile">
-                    <img src="./images/Ellipse 12.png" alt="profile-pic">
+                    <img src="{%static 'Ellipse-13.png'%}" alt="profile-pic">
                 </div>
             </div>
         </nav>
@@ -231,7 +238,12 @@
                     <div class="library moviesBox slide" id="slide">
                         <div class="library moviesImg">
                             <div class="library moviesImgWrap">
-                                <img src="{{film.thumbnail.url}}" alt="movie image">
+                                <a href="{%url 'detail' film.id%}">
+                                    <video width="100%" {%if film.thumbnail.url%} poster="{{film.thumbnail.url}}" {%endif%}>
+                                        <source src="{{film.movie.url}}" type="video/mp4">
+                                    </video>
+                                </a>
+                                <!-- <img src="" alt="movie image"> -->
                                 <div class="library movieLength">{{film.length}}</div>
                             </div>
                         </div>
@@ -298,7 +310,12 @@
                     <div class="library moviesBox slide1" id="slide1">
                         <div class="library moviesImg">
                             <div class="library moviesImgWrap">
-                                <img src="{{movie.thumbnail.url}}" alt="movie image">
+                                <a href="{%url 'detail' movie.id%}">
+                                    <video width="100%"{%if movie.thumbnail.url%} poster="{{movie.thumbnail.url}}" {%endif%}>
+                                        <source src="{{movie.movie.url}}" type="video/mp4">
+                                    </video>
+                                </a>
+                                <!-- <img src="{{movie.thumbnail.url}}" alt="movie image"> -->
                                 <div class="library movieLength">{{movie.length}}</div>
                             </div>
                             <progress class="library movieProgress" value="32" max="100"></progress>

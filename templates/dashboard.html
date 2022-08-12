@@ -17,13 +17,16 @@
         <img class="logo" src="{%static 'desktop-logo.png'%}" alt="">
         <div class="search-fields">
             <input type="search" name="" id="" placeholder="Search">
-            <select name="categories" id="">
+            <select name="categories" id="" >
                 <option value="Movies">Categories</option>
+                {%for cat in cats%}
+                <option value="Categories">{{cat}}</option> 
+                {%endfor%}
             </select>
         </div>
         <div class="notification-panel">
             <img src="{%static 'notification-icon.svg'%}" alt="">
-            <img src="{%static 'profile-photo.svg'%}" alt="">
+            <img src="{%static 'Ellipse-13.png'%}" alt="">
         </div>
     </header>
     <!-- header for mobile -->
@@ -32,7 +35,7 @@
             <img class="logo" src="{%static 'desktop-logo.png'%}" alt="">
             <div class="notification-panel">
                 <img src="{%static 'notification-icon.svg'%}" alt="">
-                <img src="{%static 'profile-photo.svg'%}" alt="">
+                <img src="{%static 'Ellipse-13.png'%}" alt="">
             </div>
         </div>
         

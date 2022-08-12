@@ -1,0 +1,487 @@
+@import url(./library.css);
+
+.library.logo svg{
+    width: 31px;
+    height: 39px;
+}
+
+.mobileBar{
+    position: absolute;
+    top: 170px;
+    left: -100%;
+    padding-left: 20px;
+    background: #000;
+    width: 100vw;
+    height: 100vh;
+    transition: all ease-in 0.3s;
+    z-index: 99;
+}
+
+.mobileBar.active{
+    left: 0;
+}
+
+.mobileBarLink{
+    color: white;
+}
+
+.mobileBarList{
+    display: flex;
+    gap: 18px;
+    margin-bottom: 19px;
+}
+
+.mobileBarList p{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+}
+
+.videoI.search{
+    padding: 5px 8px;
+    background: #FCA311;
+    border-radius: 10px;
+    width: 86%;
+}
+
+.videoI.search input{
+    width: 80%;
+    padding: 7.8px 8px;
+    height: 30px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    color: #000;
+}
+
+
+.videoI.movie{
+
+}
+
+.videoI.moviesBox{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.videoI.movie img{
+    width: 100%;
+    height: 100%;
+}
+
+.videoI.moviesBox progress[value]{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 4px;
+}
+
+.videoI.moviesBox progress[value]::-webkit-progress-bar{
+    background: #eee;
+}
+
+.videoI.moviesBox progress[value]::-webkit-progress-value{
+    background-color: red;
+}
+
+.videoI.controlModal{
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 500;
+    background: #181925;
+    padding: 4px 8px;
+}
+
+.videoI.controlModal.mobile{
+    display: flex;
+}
+
+.videoI.controls{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.videoI.icons{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.videoI.movieDetails-top{
+    margin: 16px 0;
+}
+
+.videoI.movieDetails-top .movieName{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 10px;
+    color: #FCA311;
+    margin-bottom: 5px;
+}
+
+.videoI.viewsDate{
+    display: flex;
+    gap: 20px;
+    font-weight: 300;
+    font-size: 6.07895px;
+    line-height: 10px;
+    color: #E5E5E5;
+    margin-bottom: 10px;
+}
+
+.videoI.desc{
+    color: #E5E5E5;
+    font-weight: 500;
+    font-size: 8.68421px;
+    line-height: 10px;
+}
+
+.videoI.desc h3{
+    margin-bottom: 10px;
+}
+
+.videoI.commentNo{
+    font-weight: 500;
+    font-size: 8.43911px;
+    line-height: 10px;
+    color: #E5E5E5;
+    margin-bottom: 7px;
+}
+
+.videoI.userComment{
+    display: flex;
+    gap: 5px;
+    margin-bottom: 18px;
+}
+
+.videoI.userComment img{
+    width: 16.8px;
+    height: 16.8px;
+    display: inline-block;
+}
+
+.videoI.userComment input{
+    border: 0;
+    outline: 0;
+    width: 90%;
+    background: transparent;
+    border-bottom: 0.210978px solid #E5E5E5;
+}
+
+.commentBodyIcons{
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    color: #E5E5E5;
+    margin-bottom: 15px;
+}
+
+.commentBodyIcons > img{
+    width: 17.01px;
+    height: 16.88px;
+    display: inline-block;
+}
+
+.commentor, .commentIcons{
+    font-weight: 500;
+    font-size: 5.06347px;
+    line-height: 6px;
+    letter-spacing: 0.02em;
+    color: #E5E5E5;
+}
+
+.commentIcons{
+    margin-top: 5.5px;
+    display: flex;
+    gap: 7px;
+}
+
+.commentIcons img{
+    width: 3.9px;
+    height: 4.8px;
+    display: inline-block;
+}
+
+.videoI.movies4you{
+
+}
+
+.videoI.movies4you h2{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+
+.videoI.moviesBox{
+    width: 100%;
+}
+
+.videoI.moviesImg{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.videoI.moviesImgWrap{
+    width: 100%;
+    position: relative;
+}
+
+.videoI.moviesImgWrap img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.videoI.movieLength{
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    padding: 0 2px;
+    background: #000;
+    color: #fff;
+    font-size: 6px;
+    line-height: 7px;
+    font-weight: 500;
+}
+
+.videoI.movieDetails{
+    background: #E5E5E5;
+    display: flex;
+    flex-direction: column;
+    padding: 13px 30px;
+}
+
+.videoI.movieTitle{
+    font-weight: 500;
+    font-size: 24.5161px;
+    line-height: 29px;
+    color: #01010b;
+    margin-bottom: 14px;
+}
+
+.videoI.movieRating{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 5.87px;
+}
+
+.videoI.movieRating svg{
+    width: 20.4px;
+    height: 20.4px;
+}
+
+.videoI.movieCreator{
+    font-weight: 400;
+    font-size: 18.3871px;
+    line-height: 22px;
+    color: #01010b;
+    margin-bottom: 5px;
+}
+
+.videoI.movieViews{
+    font-weight: 400;
+    font-size: 15.3226px;
+    line-height: 18px;
+    color: #01010b;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.videoI.movieViews svg{
+    width: 6.13px;
+    height: 6.13px;
+}
+
+@media screen and (min-width: 1000px) {
+    .sideBarHeading{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .library.sideBar{
+        padding-left: 10px;
+    }
+
+    .library.sideBar.active {
+        display: block;
+        width: 3%;
+        padding-top: 32px;
+        padding-left: 0;
+    }
+
+    .library.sideBar.active .sideBarHeadingListP.active{
+        display: none;
+    }
+
+    .library.sideBar.active .sideBarHeadingList.comp{
+        display: none;
+    }
+
+    .library.main{
+        gap: 20px;
+        justify-content: space-between;
+    }
+
+    .desktop--moviesBox{
+        width: 80%;
+    }
+
+    .desktop--movies4you{
+        width: 20%;
+    }
+
+    .desktop--flex{
+        display: flex;
+        gap: 20px;
+    }
+
+    .videoI.movieDetails-top .movieName{
+        font-weight: 400;
+        font-size: 26px;
+        line-height: 24px;
+    }
+
+    .videoI.controlModal.mobile{
+        display: none;
+    }
+
+    .videoI.controlModal{
+        display: flex;
+    }
+
+    .videoI.viewsDate{
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .videoI.desc{
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 40px;
+    }
+
+    .videoI.commentNo{
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 16px;
+    }
+
+    .videoI.userComment{
+        gap: 20px;
+    }
+
+    .videoI.userComment img{
+        width: 40px;
+        height: 40px;
+    }
+
+    .videoI.userComment input{
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 24px;
+    }
+
+    .commentBodyIcons > img{
+        width: 40px;
+        height: 40px;
+    }
+
+    .commentor, .commentIcons{
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .commentIcons{
+        gap: 17px;
+    }
+
+    .commentIcons img{
+        width: 9.3px;
+        height: 11.55px;
+    }
+
+    .videoI.movies4you h2{
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    .videoI.movieDetails{
+        padding: 9px 20px;
+    }
+
+    .videoI.movieTitle{
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        margin-bottom: 9px;
+    }
+
+    .videoI.movieRating{
+        gap: 16px;
+        margin-bottom: 17px;
+    }
+
+    .videoI.movieRating svg{
+        width: 13.2px;
+        height: 13.2px;
+    }
+
+    .videoI.movieCreator{
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .videoI.movieViews{
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 12px;
+        gap: 4px;
+    }
+
+    .videoI.movieViews svg{
+        width: 4px;
+        height: 4px;
+    }
+
+    .videoI.controlModal{
+        padding: 17px 6px;
+    }
+
+    .videoI.controls{
+        gap: 33px;
+    }
+
+    .videoI.icons{
+        gap: 35px;
+    }
+
+    .videoI.movieTitlee{
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 24px;
+    }
+
+    .library.logo svg{
+        width: 44px;
+        height: 60px;
+    }
+}

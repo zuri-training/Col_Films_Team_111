@@ -1,17 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Onecube</title>
-    
-  </head>
-  <body>
-    
-    
-  
-	<script src="index.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/index.css">
+  <title>Onecube</title>
+
+</head>
+<body>
+  <header class="dashboard-header">
+    <div class="dashboard-logo-wrapper">
+      <img src="images/dashboard-logo.png" alt="OneCube logo" class="dashboard-logo">
+    </div>
+    <div class="dashboard-input">
+      <input type="search" name="video-search">
+      <input type="text">
+    </div>
+    <div class="dashboard-icons">
+      <svg class="bell-icon" width="22" height="27" viewBox="0 0 22 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M12.3334 2.00008C12.3334 1.2637 11.7365 0.666748 11.0001 0.666748C10.2637 0.666748 9.66675 1.2637 9.66675 2.00008V3.00008H8.92352C5.95676 3.00008 3.5013 5.30676 3.3161 8.26774L3.02143 12.979C2.90909 14.7753 2.30603 16.5063 1.27795 17.9835C0.349044 19.3183 1.176 21.1617 2.79058 21.3554L7.33342 21.9006V23.3334C7.33342 25.3585 8.97504 27.0001 11.0001 27.0001C13.0251 27.0001 14.6667 25.3585 14.6667 23.3334V21.9006L19.2096 21.3554C20.8242 21.1617 21.6511 19.3183 20.7222 17.9835C19.6941 16.5063 19.0911 14.7753 18.9787 12.979L18.684 8.26774C18.4988 5.30677 16.0434 3.00008 13.0766 3.00008H12.3334V2.00008ZM9.33342 23.3334C9.33342 24.2539 10.0796 25.0001 11.0001 25.0001C11.9206 25.0001 12.6667 24.2539 12.6667 23.3334V22.3334H9.33342V23.3334Z"
+          fill="#E5E5E5" />
+      </svg>
+
+      <img src="" alt="profile-picture" class="profile-picture">
+    </div>
+  </header>
+
+  <div class="dashboard-top-container">
+    <div class="mobile-dashboard-input">
+      <!-- Hamburger -->
+      <input type="search" name="video-search">
+      <input type="text">
+    </div>
+    <div class="New-release">
+      <h2>New Release</h2>
+      <div class="dashboard-thumbnail-wrapper">
+        <div class="dashboard-thumbnail">
+          <img src="" alt="" class="dashboard-thumbnail-image">
+          <p>12:30</p>
+          <div class="dashboard-thumbnail-info">
+            <h3>Pressure</h3>
+            <img src="images/star.png" alt="">
+            <h4>Student Help</h4>
+            <p>15 views</p>
+            <p>8 hours ago</p>
+          </div>
+        </div>
+
+        <div class="dashboard-thumbnail">
+          <img src="" alt="" class="dashboard-thumbnail-image">
+          <p>12:30</p>
+          <div class="dashboard-thumbnail-info">
+            <h3>Pressure</h3>
+            <img src="images/star.png" alt="">
+            <h4>Student Help</h4>
+            <p>15 views</p>
+            <p>8 hours ago</p>
+          </div>
+        </div>
+
+        <div class="dashboard-thumbnail">
+          <img src="" alt="" class="dashboard-thumbnail-image">
+          <p>12:30</p>
+          <div class="dashboard-thumbnail-info">
+            <h3>Pressure</h3>
+            <img src="images/star.png" alt="">
+            <h4>Student Help</h4>
+            <p>15 views</p>
+            <p>8 hours ago</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="featured-movies">
+        <h2>Featured Movies</h2>
+        <div class="dashboard-thumbnail-wrapper">
+          <div class="dashboard-thumbnail">
+            <img src="" alt="" class="dashboard-thumbnail-image">
+            <p>12:30</p>
+            <div class="dashboard-thumbnail-info">
+              <h3>Pressure</h3>
+              <img src="images/star.png" alt="">
+              <h4>Student Help</h4>
+              <p>15 views</p>
+              <p>8 hours ago</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-category">
+        <h2>Top Category</h2>
+        <div class="dashboard-thumbnail-wrapper">
+          <div class="dashboard-thumbnail">
+            <img src="" alt="" class="dashboard-thumbnail-image">
+            <p>12:30</p>
+            <div class="dashboard-thumbnail-info">
+              <h3>Pressure</h3>
+              <img src="images/star.png" alt="">
+              <h4>Student Help</h4>
+              <p>15 views</p>
+              <p>8 hours ago</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="footer-wrapper">
+          <div class="footer-description">
+            <img class="footer-logo" src="images/desktop-footer-logo.png" alt="one-cube logo" srcset="images/mobile-footer-logo.png 77w,
+                        images/desktop-footer-logo.png 95w" sizes="(min-width: 1025px) 95px,
+                        77px">
+
+            <p class="footer-desc-text">Your one stop streaming platform for short college films by college students
+            </p>
+          </div>
+
+          <div class="footer-site-map">
+            <h2 class="footer-headings">Site Map</h2>
+            <ul class="footer-list">
+              <li>
+                <a href="" class="footer-link">Home</a>
+              </li>
+              <li>
+                <a href="" class="footer-link">FAQ</a>
+              </li>
+              <li>
+                <a href="" class="footer-link">Privacy Policies</a>
+              </li>
+              <li>
+                <a href="" class="footer-link">Registration</a>
+              </li>
+              <li>
+                <a href="" class="footer-link">About Us </a>
+              </li>
+              <li>
+                <a href="" class="footer-link">Terms of Use</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-contact">
+            <h2 class="footer-headings">Contact us</h2>
+            <div class="socials-icon">
+              <a href="" class="footer-link">
+                <img src="images/desktop-insta.png" alt="instagram-icon" srcset="images/desktop-insta.png 31.47w,
+                        images/insta.png 19.67w" sizes="(min-width: 1025px) 31.47px,
+                        19.67px">
+              </a>
+              <a href="" class="footer-link">
+                <img src="images/desktop-twitter.png" alt="twitter-icon" srcset="images/desktop-twitter.png 35.83w,
+                        images/twitter.png 22.4w" sizes="(min-width: 1025px) 35.83px,
+                        22.4px">
+              </a>
+              <a href="" class="footer-link">
+                <img src="images/desktop-fb.png" alt="fb-icon" srcset="images/desktop-fb.png 19w,
+                        images/fb.png 11.88w" sizes="(min-width: 1025px) 19px,
+                        11.88px">
+              </a>
+              <a href="" class="footer-link">
+                <img src="images/desktop-mail.png" alt="mail-icon" srcset="images/desktop-mail.png 31.3w,
+                        images/mail.png 19.56w" sizes="(min-width: 1025px) 31.3px,
+                        19.56px">
+              </a>
+            </div>
+            <div class="footer-phone">
+              <img src="images/desktop-phone.png" alt="phone-icon" srcset="images/desktop-phone.png 29.19w,
+                        images/phone.png 18.24w" sizes="(min-width: 1025px) 29.19px,
+                        18.24px">
+
+              <p>+2348116455541</p>
+            </div>
+          </div>
+          <p id="rights">All Rights Reserved</p>
+        </div>
+      </footer>
+      <script src="index.js"></script>
+</body>
 </html>

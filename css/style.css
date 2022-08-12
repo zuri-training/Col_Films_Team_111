@@ -283,6 +283,7 @@ section h1 {
 
 /* END OF DASHBOARD STYLE */
 
+
 footer {
   display: flex;
   flex-direction: column;
@@ -437,11 +438,11 @@ footer p {
     text-decoration: underline;
   }
 
-  /* SIGN-IN STYLES */
+  /* END OF SIGN-IN STYLES */
+
 
   /* DASHBOARD STYLES */
 
-  
   .header-for-mobile {
     display: none;
   }

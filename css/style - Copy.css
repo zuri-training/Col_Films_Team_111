@@ -76,7 +76,7 @@ h6 {
   padding: 8px 24px;
   gap: 10px;
 } */
-
+/* 
 .sign-in-email,
 input[type="password"] {
   display: flex;
@@ -94,14 +94,14 @@ input[type="password"] {
   color: #8a8989;
   caret-color: #8a8989;
 }
-
+ */
 input:hover,
 input:focus {
   border: 1px solid #40dee8;
 }
 
 input::placeholder {
-  color: rgba(229, 229, 229, 0.7);
+  color: #000022;
 }
 
 /*otp*/
@@ -190,6 +190,310 @@ button:disabled {
   line-height: 19px;
   color: #fca311;
 }
+
+
+/* settings-container */
+.setting-container {
+  background-color: #010210;
+  position: relative;
+  color: white;
+}
+/* navbar */
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #010100;
+  top: 0px;
+  left: 0px;
+  height: 142px;
+  position: absolute;
+  width: 100%;
+  padding: 0 3rem;
+}
+.nav-logo{
+  position: absolute;
+  width: 64px;
+  height: 80px;
+  top: 40px;
+  left: 68px;
+}
+
+/* search-cat */
+.search-cat-area {
+  display: flex;
+  align-items: center;
+  padding: 8px 24px;
+  gap: 10px;/* 
+  position: relative; */
+  color: #ffffff;
+  width: 70%;
+  top: 61px;
+  height: 39px;
+}
+
+
+.form-content {
+  display: flex;
+  align-items: center;
+}
+.search-sec,
+select {
+  padding: 8px 24px;
+  width: 23.5rem;
+  font-family: Raleway, 'sans serif';
+  border: 1px solid #8a8989;
+  border-radius: 8px;
+  background: transparent;
+  color: #8a8989;
+  caret-color: #8a8989;
+}
+
+
+/* .sign-in-area {
+  display: inline-flex;
+  flex-direction: column;
+  padding: 8px 24px;
+  gap: 10px;
+} */
+
+
+.search-sec:hover, select:hover, 
+.search-sec:focus, select:focus {
+  border: 1px solid #40dee8;
+}
+.search-sec::placeholder {
+  color: rgba(229, 229, 229, 0.7);
+  font-weight: 400;
+  font-size: 16px;
+    line-height: 18px;
+
+}
+input::placeholder {
+  color: rgba(229, 229, 229, 0.7);
+}
+
+/* settings */
+.settings{
+  /* position: relative;
+  top: 60px; */
+  gap: 10px;
+  display: flex;
+  align-items: center;
+}
+.ince {
+  font-weight: 400;
+  font-size: 2rem;
+  padding-right: 2rem;
+}
+.profile{
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+}
+
+
+/* Main Container */
+.main-container{
+  display: flex;
+  margin: 0 4rem;
+}
+.right-section{
+  flex: 0.2;
+}
+
+.sidebar{
+  position: absolute;
+  top: 142px;
+  margin-top: 57px;
+  min-width: 250px;
+  padding-right: 20px;
+}
+.rside{
+  display: flex;
+  margin: 0 auto;
+  margin: 1rem 0 0 0;
+  align-items: center;
+}
+.rside h2{
+  font-weight: 300;
+  font-size: 20px;
+}
+.ince{
+  padding: 0 10px 0 0;
+  margin-right: 1rem;
+}
+.ficon{
+  padding: 0 10px 0 0;
+}
+.rside:hover{
+  transition: color 100ms ease-out;
+  cursor: pointer;
+  color: #fca311;
+  border-right: 1px solid #fca311;
+}
+.flex-con{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 14rem;
+}
+.main-section{
+    position: relative;
+    text-align: center;
+    color: white;
+    top: 205px;
+    background-color: #e5e5e5;
+    border-radius: 10px;
+    margin-bottom: 15rem;
+    width: 465px;
+}
+.sub-section{
+    position: relative;
+    text-align: center;
+    color: white;
+    top: 205px;
+    background-color: #e5e5e5;
+    border-radius: 10px;
+    margin-left: 1rem;
+    margin-bottom: 15rem;
+    width: 374px;
+}
+.register h2{
+  padding: 1.5rem 0  1.5rem 0;
+  font-weight: 700;
+  font-size: 24px;
+  font-family: Raleway, 'sans serif';
+  color: #000022;
+
+}
+div.register{
+/*   width: 465px;
+ */  background-color: #e5e5e5;
+  font-size: 18px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  color: white;
+  padding: 40px;
+  text-align: left;
+}
+.sub-section.register{
+/*   width: 300px;
+ */  background-color: #e5e5e5;
+  font-size: 18px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  color: white;
+  padding: 40px;
+  text-align: left;
+}
+label {
+  line-height: 23px;
+  color: #000022;
+  font-family: Raleway, 'sans serif';
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 23px;
+}
+input#name, input#password{
+  width: 100%;
+  border: 0px;
+  border-bottom: 1px solid #666363;
+  outline: 0;
+  padding: 10px 10px 27px 0px;
+  background-color: transparent;
+  color: #000022;
+  font-size: 20px;
+
+}
+
+.deactivate-button button a{
+  color: #e5e5e5;
+  padding: .4rem .4rem;
+  background: #fca311;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+
+.profile-text{
+  color: #0000227a;
+  font-size: 18px;
+  line-height: 21.3px;
+  font-weight: 400;
+  font-family: Raleway, 'sans serif';
+  padding: 0px;
+  margin: 0px;
+  margin-top: 7px;
+}
+.section-upload{
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  justify-content: space-between;
+}
+.avatar-upload{
+  width: 133px;
+  height: 133px;
+  border-radius: 50%;
+  font-weight: 400;
+  font-size: 4rem;
+  background-color: #d4cece;
+  color: #a99d9d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+.upload-link a{
+  color: #00002288;
+}
+
+.upload-link a:hover{
+  text-decoration: none;
+}
+.section-upload .upload-btn a{
+  padding: 12px 20px 12px 20px;
+  color: #010210;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  background: #fca311;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  width: 77px;
+  height: 43px;
+}
+
+.upload-btn a{
+  color: #010210;
+  text-decoration: none;
+}
+
+input#fname, input#uname, input#email{
+  width: 100%;
+  border: 1px solid #666363;
+  outline: 0;
+  padding: 20px 20px 20px 20px;
+  background-color: transparent;
+  color: #000022;
+  border-radius: 10px;
+  font-size: 20px;
+}
+.upload-form h2{
+  line-height: 21px;
+  font-family: Raleway, 'sans serif';
+  color: #00002288;
+  font-size: 18px;
+  font-weight: 400;
+}
+.upload-form a{
+  color: #010210;
+  text-decoration: none;
+}
+/* ////////////////////////// */
 
 footer {
   display: flex;
@@ -327,25 +631,26 @@ footer p {
     height: 38px;
   }
 
-  .sign-in-email,
+  /* .sign-in-email,
   input[type="password"] {
     width: 755px;
     height: 96px;
     font-weight: 400;
     font-size: 24px;
     line-height: 28px;
-  }
+  } */
 
   input::placeholder {
     font-weight: 400;
-    font-size: 24px;
-    line-height: 28px;
+    font-size: 18px;
+    line-height: 21px;
+    color: #00002273;
   }
 
-  button {
+  /*  button {
     width: 222px;
     height: 65px;
-  }
+  }  */
 
   .forgot-password {
     text-decoration: underline;

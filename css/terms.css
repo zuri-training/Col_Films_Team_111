@@ -1,5 +1,5 @@
 @import url(./css/style.css);
-ul, ol{
+.terms ol{
     margin: 0;
     list-style: none;
     padding: 0;

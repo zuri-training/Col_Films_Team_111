@@ -120,6 +120,7 @@ input::placeholder {
 }
 
 button:hover {
+  cursor: pointer;
   border: none;
   box-shadow: 0px 4px 12px rgba(137, 21, 21, 0.61);
 }
@@ -276,18 +277,16 @@ section h1 {
 }
 ::-webkit-scrollbar-thumb {
   -webkit-appearance: none;
-  background-color:rgba(229, 229, 229, 0.7);
+  background-color: rgba(229, 229, 229, 0.7);
   border-radius: 8px;
   border: 1px solid rgb(86, 87, 91);
 }
 
 /* END OF DASHBOARD STYLE */
 
-
 /* FORGOT PASSWORD STYLES */
 
-
-main {
+.forgot-password-main main {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -297,16 +296,29 @@ main {
   text-align: left;
   color: white;
 }
-h1 {
-  font-weight: 400;
+.forgot-password-main h1 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  color: #ffffff;
   margin: 13px 0;
 }
-form {
+
+.forgot-password-main p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
+}
+
+.forgot-password-form {
   display: flex;
   flex-direction: column;
 }
 .forgot-password-form input {
-  border: 1px solid #FFFFFF;
+  border: 1px solid #ffffff;
   border-radius: 10px;
   background: transparent;
   padding: 18px;
@@ -314,8 +326,16 @@ form {
   color: white;
 }
 
+.forgot-password-form small {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #ffffff;
+}
+
 /* Hide the default checkbox */
-input[type=checkbox] {
+input[type="checkbox"] {
   visibility: hidden;
 }
 
@@ -327,6 +347,11 @@ input[type=checkbox] {
   justify-content: start;
   align-items: center;
   width: 100%;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
 }
 .checkbox {
   height: 25px;
@@ -372,23 +397,27 @@ like a tickmark */
   transform: rotate(45deg);
 }
 
-
-form small {
-  margin-top: -1.5em;
-  font-size: 12px;
+.forgot-password-form small {
   font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  width: 380px;
+  height: 32px;
+  color: #ffffff;
 }
+
 .forgot-password-form button {
   color: black;
   border-radius: 10px;
-  background: #FCA311;
-  width: fit-content;
-  padding: 10px 64px;
+  background: #fca311;
+  width: 130.94px;
+  height: 38.34px;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 18.874px;
+  line-height: 22px;
   border: none;
 }
-
 
 /* END OF FORGOT PASSWORD STYLES */
 
@@ -548,7 +577,6 @@ footer p {
 
   /* END OF SIGN-IN STYLES */
 
-
   /* DASHBOARD STYLES */
 
   .header-for-mobile {
@@ -637,6 +665,55 @@ footer p {
   }
 
   /* END OF DASHBOARD STYLES */
+
+  /* FORGOT PASSWORD STYLES */
+
+  .forgot-password-main h1 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .forgot-password-main p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .checkbox-container {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .forgot-password-form small {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    width: 768px;
+    height: 38px;
+    color: #ffffff;
+  }
+
+  .forgot-password-form button {
+    width: 280px;
+    height: 60px;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 33px;
+    border: none;
+  }
+
+  .forgot-password-form input {
+    width: 560px;
+    height: 96px;
+  }
+
+  /* END OF FORGOT PASSWORD STYLES */
 
   footer {
     display: flex;

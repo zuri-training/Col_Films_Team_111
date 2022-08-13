@@ -12,6 +12,8 @@ def modal(request):
     return render(request, 'video_modal.html', {})
 
 def create_movie(request):
+    if not request.user.id:
+        return render(request, 'blank.html', {})
     def convert(seconds):
         hours = seconds // 3600
         seconds %= 3600
@@ -33,7 +35,8 @@ def create_movie(request):
             elif temp_length <= 600:
                 obj.length = convert(int(clip.duration))
                 obj.save()
-                return redirect('dashboard')
+                # succes = 'Your Movie Was Uploaded Succesfully'
+                return redirect('dashboard', request.user.id)
     else:
          form = MovieCreateForm()
     return render(request, 'add_movie.html', {'form':form})
@@ -102,11 +105,15 @@ def add_favourite(request, id):
 #     favs = Movie.objects.filter(favourites=request.user)
 #     return render(request, 'favourites.html', {'favs':favs})
 
-class DeleteMovie(DeleteView):
-    model = Movie
-    template_name = 'delete.html'
-    success_url = 'dashboard'
 
+
+def delete(request, pk):
+    if not request.user.id:
+        return render(request, 'blank.html', {})
+    mov = Movie.objects.get(id=pk)
+    mov.delete()
+    return redirect('my_videos')
+    
 def add_likes(request, pk):
     post = get_object_or_404(Movie, id=pk)
     print(post)
@@ -164,4 +171,10 @@ def settings(request):
     return render(request, 'settings.html', {})
 
 def my_videos(request):
-    return render(request, 'my_videos.html', {})
+    if not request.user.id:
+        return render(request, 'blank.html', {})
+    movs = Movie.objects.filter(uploader=request.user)
+    data = {
+        'movs':movs
+    }
+    return render(request, 'my_videos.html', data)

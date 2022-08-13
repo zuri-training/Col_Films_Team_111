@@ -1,13 +1,315 @@
-{{user.id}}
-{%if user.is_authenticated %}
-<form enctype="multipart/form-data" method="POST" >
-    {%csrf_token%}
-    {{form.as_p}}
-    <button type="submit">Post</button>
-</form>
-{%else%}
-<h1>You're Not Authorized To Be Here!!!</h1>
-{%endif%}
-{%if length_error %}
-<h1>{{length_error}}</h1>
-{%endif%}
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{%static 'css/library.css'%}">
+    <link rel="icon" type="images/png" href="{%static 'logo.png'%}" />
+    <title>Onecube - Upload</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        .my_form{
+            width: 300px;
+            margin: auto;
+        }
+        .my_form h3{
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .my_form input{
+            margin-bottom: 20px;
+        }
+        .my_form input{
+            width: 100%;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        .my_form select{
+            width: 100%;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        #id_description{
+            padding-bottom: 50px;
+        }
+        #id_thumbnail{
+            padding: 0;
+            background-color: white;
+        }
+        #id_movie{
+            padding: 0;
+            margin-top: 10px;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="library--header">
+        <nav class="library navbar">
+            <div class="library logo">
+                <img src="{%static 'logo.png'%}" alt="logo">
+            </div>
+            <div class="library searchCategory">
+                <div class="library header search">
+                    <div class="library header searchWrap">
+                        <input type="text" placeholder="Search">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.97244 10.8715C7.76389 12.6403 4.53103 12.5011 2.48371 10.4538C0.287007 8.25709 0.287007 4.69554 2.48371 2.49884C4.6804 0.302143 8.24196 0.302144 10.4387 2.49884C12.486 4.54616 12.6252 7.77902 10.8563 9.98757L15.1527 14.2839C15.3968 14.528 15.3968 14.9237 15.1527 15.1678C14.9086 15.4119 14.5129 15.4119 14.2688 15.1678L9.97244 10.8715ZM3.36759 9.56991C1.65905 7.86137 1.65905 5.09127 3.36759 3.38273C5.07613 1.67418 7.84623 1.67418 9.55477 3.38273C11.2621 5.09002 11.2633 7.8573 9.55853 9.56615C9.55727 9.56739 9.55601 9.56864 9.55476 9.56989C9.5535 9.57114 9.55226 9.5724 9.55102 9.57366C7.84217 11.2785 5.07488 11.2772 3.36759 9.56991Z" fill="#8A8989"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="library header category">
+                    <div class="library header categoryWrap">
+                        
+                        <input type="" value="" placeholder="Category">
+                        
+                        <svg width="17" height="9" viewBox="0 0 17 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.4611 1.34753L9.76434 7.04425C9.09156 7.71702 7.99066 7.71702 7.31788 7.04425L1.62109 1.34753" stroke="#8A8989" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="library icons">
+                <div class="libray notifications">
+                    <svg width="22" height="27" viewBox="0 0 22 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12.3334 1.99984C12.3334 1.26346 11.7365 0.666504 11.0001 0.666504C10.2637 0.666504 9.66675 1.26346 9.66675 1.99984V2.99984H8.92352C5.95676 2.99984 3.5013 5.30652 3.3161 8.2675L3.02143 12.9788C2.90909 14.775 2.30603 16.506 1.27795 17.9833C0.349044 19.318 1.176 21.1615 2.79058 21.3552L7.33342 21.9003V23.3332C7.33342 25.3582 8.97504 26.9998 11.0001 26.9998C13.0251 26.9998 14.6667 25.3582 14.6667 23.3332V21.9003L19.2096 21.3552C20.8242 21.1615 21.6511 19.318 20.7222 17.9833C19.6941 16.506 19.0911 14.775 18.9787 12.9788L18.684 8.2675C18.4988 5.30652 16.0434 2.99984 13.0766 2.99984H12.3334V1.99984ZM9.33342 23.3332C9.33342 24.2536 10.0796 24.9998 11.0001 24.9998C11.9206 24.9998 12.6667 24.2536 12.6667 23.3332V22.3332H9.33342V23.3332Z" fill="#E5E5E5"/>
+                    </svg>
+                </div>
+                <div class="libray searchIcon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M15.18 16.5942C11.6463 19.4244 6.47376 19.2017 3.19805 15.926C-0.316668 12.4113 -0.316668 6.71277 3.19805 3.19805C6.71277 -0.316668 12.4113 -0.316667 15.926 3.19805C19.2017 6.47376 19.4244 11.6463 16.5942 15.18L23.4684 22.0542C23.8589 22.4447 23.8589 23.0779 23.4684 23.4684C23.0779 23.8589 22.4447 23.8589 22.0542 23.4684L15.18 16.5942ZM4.61226 14.5118C1.87859 11.7781 1.87859 7.34593 4.61226 4.61226C7.34593 1.87859 11.7781 1.87859 14.5118 4.61226C17.2434 7.34393 17.2454 11.7716 14.5178 14.5057C14.5158 14.5077 14.5137 14.5097 14.5117 14.5117C14.5097 14.5137 14.5077 14.5157 14.5057 14.5178C11.7716 17.2454 7.34393 17.2434 4.61226 14.5118Z" fill="#E5E5E5"/>
+                    </svg>
+                </div>
+                <div class="libray profile">
+                    <img src="{%static 'Ellipse-13.png'%}" alt="profile-pic">
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="library main">
+        <!-- Search Section -->
+
+        <div class="library dropSearchCategory">
+            <div class="library drop" id="libraryDrop">
+                <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M21.3334 7.99992C21.3334 7.44763 20.8857 6.99992 20.3334 6.99992H1.66675C1.11446 6.99992 0.666748 7.44763 0.666748 7.99992C0.666748 8.5522 1.11446 8.99992 1.66675 8.99992H20.3334C20.8857 8.99992 21.3334 8.5522 21.3334 7.99992Z" fill="#FCA311"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M21.3334 1.33325C21.3334 0.780967 20.8857 0.333252 20.3334 0.333252H1.66675C1.11446 0.333252 0.666748 0.780967 0.666748 1.33325C0.666748 1.88554 1.11446 2.33325 1.66675 2.33325H20.3334C20.8857 2.33325 21.3334 1.88554 21.3334 1.33325Z" fill="#FCA311"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M21.3334 14.6666C21.3334 14.1143 20.8857 13.6666 20.3334 13.6666H1.66675C1.11446 13.6666 0.666748 14.1143 0.666748 14.6666C0.666748 15.2189 1.11446 15.6666 1.66675 15.6666H20.3334C20.8857 15.6666 21.3334 15.2189 21.3334 14.6666Z" fill="#FCA311"/>
+                </svg>
+            </div>
+            <div class="library search">
+                <div class="library searchWrap">
+                    <input type="text" placeholder="Search">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.97244 10.8715C7.76389 12.6403 4.53103 12.5011 2.48371 10.4538C0.287007 8.25709 0.287007 4.69554 2.48371 2.49884C4.6804 0.302143 8.24196 0.302144 10.4387 2.49884C12.486 4.54616 12.6252 7.77902 10.8563 9.98757L15.1527 14.2839C15.3968 14.528 15.3968 14.9237 15.1527 15.1678C14.9086 15.4119 14.5129 15.4119 14.2688 15.1678L9.97244 10.8715ZM3.36759 9.56991C1.65905 7.86137 1.65905 5.09127 3.36759 3.38273C5.07613 1.67418 7.84623 1.67418 9.55477 3.38273C11.2621 5.09002 11.2633 7.8573 9.55853 9.56615C9.55727 9.56739 9.55601 9.56864 9.55476 9.56989C9.5535 9.57114 9.55226 9.5724 9.55102 9.57366C7.84217 11.2785 5.07488 11.2772 3.36759 9.56991Z" fill="#1E1E1E"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="library category">
+                <div class="library categoryWrap">
+                    <input type="text" placeholder="Category">
+                    <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.54547 0.96967C9.83836 1.26256 9.83836 1.73744 9.54547 2.03033L5.54547 6.03033C5.25257 6.32322 4.7777 6.32322 4.48481 6.03033L0.484807 2.03033C0.191913 1.73744 0.191913 1.26256 0.484807 0.96967C0.7777 0.676777 1.25257 0.676777 1.54547 0.96967L5.01514 4.43934L8.48481 0.96967C8.7777 0.676777 9.25257 0.676777 9.54547 0.96967Z" fill="#1E1E1E"/>
+                    </svg>
+                </div>
+            </div>
+            <ul class="mobileBar">
+                <a class="mobileBarLink" href="{%url 'dashboard' user.id%}">
+                    <li class="mobileBarList">
+                        <svg width="16" height="19" viewBox="0 0 16 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.79674 1.13597C8.81432 0.121347 7.18708 0.121345 6.20466 1.13596L1.40619 6.09169C1.13061 6.37631 0.94542 6.73612 0.873963 7.12579C0.291204 10.3038 0.248187 13.5572 0.746721 16.7495L0.923223 17.8797C0.978972 18.2367 1.28644 18.4998 1.64774 18.4998H5.0007C5.27685 18.4998 5.5007 18.276 5.5007 17.9998V10.9998H10.5007V17.9998C10.5007 18.276 10.7246 18.4998 11.0007 18.4998H14.3536C14.7149 18.4998 15.0224 18.2367 15.0781 17.8797L15.2546 16.7495C15.7532 13.5572 15.7102 10.3038 15.1274 7.12579C15.0559 6.73612 14.8708 6.37631 14.5952 6.0917L9.79674 1.13597Z" fill="white"/>
+                        </svg>
+                        <p class="mobileBarListP">Home</p>
+                    </li>
+                </a>
+                <a class="mobileBarLink" href="{%url 'add_movie'%}">
+                    <li class="mobileBarList lib">
+                        <svg width="22" height="15" viewBox="0 0 22 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M18.3612 13.5795C17.9556 13.97 17.4178 14.2212 16.8252 14.2636L15.1873 14.3808C11.7335 14.6279 8.26637 14.6279 4.81252 14.3808L3.29851 14.2725C2.10248 14.1869 1.11598 13.3027 0.900458 12.1232C0.463793 9.73327 0.389037 7.29129 0.678696 4.87915L0.951182 2.61004C1.11289 1.26343 2.25529 0.25 3.61158 0.25H5.90314C7.0209 0.25 7.95216 1.04846 8.15768 2.10612L16.4721 2.10612C17.7785 2.10612 18.8912 3.05533 19.0971 4.34535L19.1612 4.74679C19.1746 4.83114 19.1876 4.91554 19.2001 5H19.5361C21.0085 5 22.0208 6.47983 21.4871 7.85212L20.2377 11.065C19.8497 12.0626 19.1988 12.9301 18.3612 13.5795ZM17.6159 4.58178L17.6799 4.98322C17.6808 4.98881 17.6817 4.99441 17.6826 5H8.37033C7.23463 5 6.21575 5.69815 5.80577 6.75727L3.47393 12.7812L3.40555 12.7763C2.89208 12.7396 2.46856 12.36 2.37603 11.8536C1.9664 9.61162 1.89627 7.32081 2.168 5.058L2.44048 2.78888C2.51167 2.19611 3.01455 1.75 3.61158 1.75H5.90314C6.34319 1.75 6.69991 2.10672 6.69991 2.54677C6.69991 3.13183 7.1742 3.60612 7.75926 3.60612H16.4721C17.0413 3.60612 17.5261 4.0197 17.6159 4.58178ZM5.03908 12.8931C8.38212 13.1266 11.7375 13.1238 15.0803 12.8846L16.7181 12.7674L16.9127 12.7492L16.9113 12.7468C17.7919 12.25 18.4732 11.4636 18.8397 10.5213L20.0891 7.30845C20.2404 6.91947 19.9535 6.5 19.5361 6.5H8.37033C7.85411 6.5 7.39098 6.81734 7.20462 7.29876L5.03908 12.8931Z" fill="#FCA311"/>
+                        </svg>
+                        <p>Upload</p>
+                    </li>
+                </a>
+                <a class="mobileBarLink" href="{%url 'settings'%}">
+                    <li class="mobileBarList">
+                        <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.75 1.5V4.5L7.25 5.25L5 3L2 6L4.25 8.25L3.5 9.75H0.5V14.25H3.5L4.25 15.75L2 18L5 21L7.25 18.75L8.75 19.5V22.5H13.25V19.5L14.75 18.75L17 21L20 18L17.75 15.75L18.5 14.25H21.5V9.75H18.5L17.75 8.25L20 6L17 3L14.75 5.25L13.25 4.5V1.5H8.75Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M11 15C12.6569 15 14 13.6569 14 12C14 10.3431 12.6569 9 11 9C9.34315 9 8 10.3431 8 12C8 13.6569 9.34315 15 11 15Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <p class="mobileBarListP">Settings</p>
+                    </li>
+                </a>
+                <a class="mobileBarLink" href="{%url 'user_logout'%}">
+                    <li class="mobileBarList">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.5 22.5H13.5C13.8977 22.4996 14.279 22.3414 14.5602 22.0602C14.8414 21.779 14.9996 21.3977 15 21V18.75H13.5V21H4.5V3H13.5V5.25H15V3C14.9996 2.6023 14.8414 2.221 14.5602 1.93978C14.279 1.65856 13.8977 1.5004 13.5 1.5H4.5C4.1023 1.5004 3.721 1.65856 3.43978 1.93978C3.15856 2.221 3.0004 2.6023 3 3V21C3.0004 21.3977 3.15856 21.779 3.43978 22.0602C3.721 22.3414 4.1023 22.4996 4.5 22.5Z" fill="white"/>
+                            <path d="M15.4395 15.4395L18.129 12.75H7.5V11.25H18.129L15.4395 8.5605L16.5 7.5L21 12L16.5 16.5L15.4395 15.4395Z" fill="white"/>
+                        </svg>
+                        <p class="mobileBarListP">Log out</p>
+                    </li>
+                </a>
+            </ul>
+        </div>
+
+        <div class="library sideBar">
+            <div class="sideBarHeading">
+                <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg" id="dropdown">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M21.3334 7.99992C21.3334 7.44763 20.8857 6.99992 20.3334 6.99992H1.66675C1.11446 6.99992 0.666748 7.44763 0.666748 7.99992C0.666748 8.5522 1.11446 8.99992 1.66675 8.99992H20.3334C20.8857 8.99992 21.3334 8.5522 21.3334 7.99992Z" fill="#Fff"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M21.3334 1.33325C21.3334 0.780967 20.8857 0.333252 20.3334 0.333252H1.66675C1.11446 0.333252 0.666748 0.780967 0.666748 1.33325C0.666748 1.88554 1.11446 2.33325 1.66675 2.33325H20.3334C20.8857 2.33325 21.3334 1.88554 21.3334 1.33325Z" fill="#Fff"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M21.3334 14.6666C21.3334 14.1143 20.8857 13.6666 20.3334 13.6666H1.66675C1.11446 13.6666 0.666748 14.1143 0.666748 14.6666C0.666748 15.2189 1.11446 15.6666 1.66675 15.6666H20.3334C20.8857 15.6666 21.3334 15.2189 21.3334 14.6666Z" fill="#Fff"/>
+                </svg>
+                <p class="sideBarHeadingListP">Menu</p>
+            </div>
+            <ul>
+                <a class="sideBarHeadingLink" href="{%url 'dashboard' user.id%}">
+                    <li class="sideBarHeadingList">
+                        <svg width="16" height="19" viewBox="0 0 16 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.79674 1.13597C8.81432 0.121347 7.18708 0.121345 6.20466 1.13596L1.40619 6.09169C1.13061 6.37631 0.94542 6.73612 0.873963 7.12579C0.291204 10.3038 0.248187 13.5572 0.746721 16.7495L0.923223 17.8797C0.978972 18.2367 1.28644 18.4998 1.64774 18.4998H5.0007C5.27685 18.4998 5.5007 18.276 5.5007 17.9998V10.9998H10.5007V17.9998C10.5007 18.276 10.7246 18.4998 11.0007 18.4998H14.3536C14.7149 18.4998 15.0224 18.2367 15.0781 17.8797L15.2546 16.7495C15.7532 13.5572 15.7102 10.3038 15.1274 7.12579C15.0559 6.73612 14.8708 6.37631 14.5952 6.0917L9.79674 1.13597Z" fill="white"/>
+                        </svg>
+                        <p class="sideBarHeadingListP">Home</p>
+                    </li>
+                </a>
+                <a class="sideBarHeadingLink" href="{%url 'add_movie'%}">
+                    <li class="sideBarHeadingList lib">
+                        <svg width="22" height="15" viewBox="0 0 22 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M18.3612 13.5795C17.9556 13.97 17.4178 14.2212 16.8252 14.2636L15.1873 14.3808C11.7335 14.6279 8.26637 14.6279 4.81252 14.3808L3.29851 14.2725C2.10248 14.1869 1.11598 13.3027 0.900458 12.1232C0.463793 9.73327 0.389037 7.29129 0.678696 4.87915L0.951182 2.61004C1.11289 1.26343 2.25529 0.25 3.61158 0.25H5.90314C7.0209 0.25 7.95216 1.04846 8.15768 2.10612L16.4721 2.10612C17.7785 2.10612 18.8912 3.05533 19.0971 4.34535L19.1612 4.74679C19.1746 4.83114 19.1876 4.91554 19.2001 5H19.5361C21.0085 5 22.0208 6.47983 21.4871 7.85212L20.2377 11.065C19.8497 12.0626 19.1988 12.9301 18.3612 13.5795ZM17.6159 4.58178L17.6799 4.98322C17.6808 4.98881 17.6817 4.99441 17.6826 5H8.37033C7.23463 5 6.21575 5.69815 5.80577 6.75727L3.47393 12.7812L3.40555 12.7763C2.89208 12.7396 2.46856 12.36 2.37603 11.8536C1.9664 9.61162 1.89627 7.32081 2.168 5.058L2.44048 2.78888C2.51167 2.19611 3.01455 1.75 3.61158 1.75H5.90314C6.34319 1.75 6.69991 2.10672 6.69991 2.54677C6.69991 3.13183 7.1742 3.60612 7.75926 3.60612H16.4721C17.0413 3.60612 17.5261 4.0197 17.6159 4.58178ZM5.03908 12.8931C8.38212 13.1266 11.7375 13.1238 15.0803 12.8846L16.7181 12.7674L16.9127 12.7492L16.9113 12.7468C17.7919 12.25 18.4732 11.4636 18.8397 10.5213L20.0891 7.30845C20.2404 6.91947 19.9535 6.5 19.5361 6.5H8.37033C7.85411 6.5 7.39098 6.81734 7.20462 7.29876L5.03908 12.8931Z" fill="#FCA311"/>
+                        </svg>
+                        <p class="sideBarHeadingListP">Upload</p>
+                    </li>
+                </a>
+                <a class="sideBarHeadingLink" href="{%url 'settings'%}">
+                    <li class="sideBarHeadingList">
+                        <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.75 1.5V4.5L7.25 5.25L5 3L2 6L4.25 8.25L3.5 9.75H0.5V14.25H3.5L4.25 15.75L2 18L5 21L7.25 18.75L8.75 19.5V22.5H13.25V19.5L14.75 18.75L17 21L20 18L17.75 15.75L18.5 14.25H21.5V9.75H18.5L17.75 8.25L20 6L17 3L14.75 5.25L13.25 4.5V1.5H8.75Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M11 15C12.6569 15 14 13.6569 14 12C14 10.3431 12.6569 9 11 9C9.34315 9 8 10.3431 8 12C8 13.6569 9.34315 15 11 15Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <p class="sideBarHeadingListP">Settings</p>
+                    </li>
+                </a>
+                <a class="sideBarHeadingLink" href="{%url 'user_logout'%}">
+                    <li class="sideBarHeadingList">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.5 22.5H13.5C13.8977 22.4996 14.279 22.3414 14.5602 22.0602C14.8414 21.779 14.9996 21.3977 15 21V18.75H13.5V21H4.5V3H13.5V5.25H15V3C14.9996 2.6023 14.8414 2.221 14.5602 1.93978C14.279 1.65856 13.8977 1.5004 13.5 1.5H4.5C4.1023 1.5004 3.721 1.65856 3.43978 1.93978C3.15856 2.221 3.0004 2.6023 3 3V21C3.0004 21.3977 3.15856 21.779 3.43978 22.0602C3.721 22.3414 4.1023 22.4996 4.5 22.5Z" fill="white"/>
+                            <path d="M15.4395 15.4395L18.129 12.75H7.5V11.25H18.129L15.4395 8.5605L16.5 7.5L21 12L16.5 16.5L15.4395 15.4395Z" fill="white"/>
+                        </svg>
+                        <p class="sideBarHeadingListP">Log out</p>
+                    </li>
+                </a>
+            </ul>
+        </div>
+        <!-- Completed Movies Section -->
+        {{user.id}}
+            {%if user.is_authenticated %}
+            <div class="my_form">
+            <form enctype="multipart/form-data" method="POST" >
+                {%csrf_token%}
+                <h3 style="color: white;">Title</h3>
+                {{form.title}} <br>
+                <h3 style="color: white;">Description</h3>
+                {{form.description}} <br>
+                <h3 style="color: white;">Category</h3>
+                {{form.category}} <br><br>
+                <h3 style="color: white;">Movie</h3>
+                {{form.movie}} 
+                <h3 style="color: white;">Thumbnail</h3>
+                {{form.thumbnail}} 
+                <br>
+                <br>
+                <!-- {{form.as_p}} -->
+                <button type="submit">Upload</button>
+            </form>
+            </div>
+            {%else%}
+            <h1>You're Not Authorized To Be Here!!!</h1>
+            {%endif%}
+            {%if length_error %}
+            <h1>{{length_error}}</h1>
+        {%endif%}
+    </main>
+    
+    <footer>
+        <div class="footer-wrapper">
+            <div class="footer-description">
+                <img class="footer-logo" src="{%static 'desktop-footer-logo.png'%}" alt="one-cube logo" srcset="{%static 'mobile-footer-logo.png'%} 77w,
+                        {%static 'desktop-footer-logo.png'%} 95w" sizes="(min-width: 1025px) 95px,
+                        77px">
+
+                <p class="footer-desc-text">Your one stop streaming platform for short college films by college students
+                </p>
+            </div>
+
+            <div class="footer-site-map">
+                <h2 class="footer-headings">Site Map</h2>
+                <ul class="footer-list">
+                    <li>
+                        <a href="{%url 'dashboard' user.id%}" class="footer-link">Home</a>
+                    </li>
+                    <li>
+                        <a href="" class="footer-link">FAQ</a>
+                    </li>
+                    <li>
+                        <a href="" class="footer-link">Privacy Policies</a>
+                    </li>
+                    <li>
+                        <a href="" class="footer-link">Registration</a>
+                    </li>
+                    <li>
+                        <a href="" class="footer-link">About Us </a>
+                    </li>
+                    <li>
+                        <a href="{%url 'terms'%}" class="footer-link">Terms of Use</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h2 class="footer-headings">Contact us</h2>
+                <div class="socials-icon">
+                    <a href="" class="footer-link">
+                        <img src="{%static 'desktop-insta.png'%}" alt="instagram-icon" srcset="{%static 'desktop-insta.png'%} 31.47w,
+                        {%static 'insta.png' %} 19.67w" sizes="(min-width: 1025px) 31.47px,
+                        19.67px">
+                    </a>
+                    <a href="" class="footer-link">
+                        <img src="{%static 'desktop-twitter.png' %}" alt="twitter-icon" srcset="{%static 'desktop-twitter.png'%} 35.83w,
+                        {%static 'twitter.png'%} 22.4w" sizes="(min-width: 1025px) 35.83px,
+                        22.4px">
+                    </a>
+                    <a href="" class="footer-link">
+                        <img src="{%static 'desktop-fb.png'%}" alt="fb-icon" srcset="{%static 'desktop-fb.png'%} 19w,
+                        {%static 'fb.png'%} 11.88w" sizes="(min-width: 1025px) 19px,
+                        11.88px">
+                    </a>
+                    <a href="" class="footer-link">
+                        <img src="{%static 'desktop-mail.png'%}" alt="mail-icon" srcset="{%static 'desktop-mail.png'%} 31.3w,
+                        {%static 'mail.png'%} 19.56w" sizes="(min-width: 1025px) 31.3px,
+                        19.56px">
+                    </a>
+                </div>
+                <div class="footer-phone">
+                    <img src="{%static 'desktop-phone.png' %}" alt="phone-icon" srcset="{%static 'desktop-phone.png' %} 29.19w,
+                        {%static 'phone.png'%} 18.24w" sizes="(min-width: 1025px) 29.19px,
+                        18.24px">
+
+                    <p>+2348116455541</p>
+                </div>
+            </div>
+            <p id="rights">All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script src="{%static 'script/index.js'%}"></script>
+    <script src="{%static 'script/library.js'%}"></script>
+</body>
+
+</html>
+
+
+

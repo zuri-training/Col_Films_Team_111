@@ -39,7 +39,7 @@ def validate_file_extension(value):
 
 class Movie(models.Model):
     title = models.CharField(max_length=250)
-    description = models.TextField(max_length=250)
+    description = models.CharField(max_length=250)
     thumbnail = models.ImageField(upload_to='movies/thumbnails/%y%m%d', null=True, blank=True)
     movie = models.FileField(upload_to='movies/movie/%y%m%d', validators=[validate_file_extension], null=True)
     category =  models.TextField(choices=CATEGORY_CHOICES)

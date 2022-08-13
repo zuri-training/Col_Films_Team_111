@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-s!w7yzmi0hwq2_sh7xyle5i1*to22rj&-bco_xx&sdr#l@1qp$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['zurifordummies', '127.0.0.1', 'localhost', 'zurifordummies.com']
+ALLOWED_HOSTS = ['zurifordummies', '127.0.0.1', 'localhost', 'onecube.zurifordummies.com', 'www.onecube.zurifordummies.com']
 
 
 # Application definition
@@ -74,7 +74,7 @@ TEMPLATES = [
 ]
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static",)
+    os.path.join(BASE_DIR, "static/",)
 ]
 
 WSGI_APPLICATION = 'col_films111.wsgi.application'
@@ -126,6 +126,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 

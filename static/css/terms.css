@@ -1,0 +1,209 @@
+@import url(./style.css);
+ul, ol{
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+h1, h2, h3{
+    font-family: 'Raleway', sans-serif;
+}
+
+/* Navbar styles */
+.terms.header{
+    padding: 40px 70px;
+    background: #01010b;
+}
+
+.terms.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.terms.logo img{
+    width: 40px;
+    height: 50.4px;
+}
+
+.terms.buttons{
+    display: flex;
+    align-items: center;
+}
+
+.terms.buttons a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 43px;
+    padding: 12px 20px;
+    border-radius: 10px;
+    color: #010210;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.terms.signUp{
+    background: #fca311;
+    width: 174px;
+    margin-left: 59px;
+}
+
+.terms.signIn{
+    background: #e5e5e5;
+    width: 163px;
+}
+
+/* Main sectio styles */
+.terms.main{
+    padding: 40px 70px;
+    background: #01010b;
+    color: #fff;
+}
+
+.terms.h1{
+    margin-bottom: 101px;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+    text-align: center;
+}
+
+.terms.h2Content{
+    margin-bottom: 40px;
+}
+
+.terms.h2{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.terms.content{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.terms.content p{
+    margin: 8px 0;
+}
+
+.terms.content .alpha{
+    list-style: lower-alpha;
+    list-style-position: inside;
+}
+
+.terms.h3{
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    margin: 5px 0;
+}
+
+.subOl{
+    padding-top: 5px;
+    padding-bottom: 40px;
+}
+
+.classCounter{
+    counter-reset: item;
+    list-style-type: none;
+}
+
+.liCounter{
+    display: table;
+    counter-increment: item;
+}
+
+.liCounter::before{
+    content: counters(item, ".") ". ";
+    display: table-cell;
+    padding-right: 5px;
+}
+
+.permOl{
+    list-style: decimal;
+    list-style-position: inside;
+    padding-right: 5px;
+}
+
+.liCounter.h3{
+    padding-bottom: 40px;
+}
+
+.liCounter.h3::before{
+    font-size: 24px;
+}
+
+@media screen and (max-width: 1000px) {
+    .terms.header{
+        padding: 9px 25px;
+    }
+
+    .terms.logo img{
+        width: 20px;
+        height: 25.2px;
+    }
+
+    .terms.buttons a{
+        height: 26px;
+        border-radius: 5px;
+        padding: 6px 10px;
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .terms.signUp{
+        width: 68px;
+        margin-left: 26px;
+    }
+
+    .terms.signIn{
+        width: 68px;
+    }
+
+    .terms.h1{
+        font-size: 14px;
+        line-height: 16px;
+        margin-bottom: 26px;
+    }
+
+    .terms.h2Content{
+        margin-bottom: 16px;
+    }
+
+    .terms.h2{
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .terms.content{
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .terms.main{
+        padding: 11px 25px;
+    }
+
+    .terms.h3{
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .liCounter.h3{
+        padding-bottom: 10px;
+    }
+
+    .liCounter.h3::before{
+        font-size: 12px;
+    }
+
+    .permOl{
+        list-style-position: outside;
+        padding-left: 15px;
+    }
+}

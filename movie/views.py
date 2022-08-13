@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Movie
+from .models import Movie, Category
 from .forms import MovieCreateForm
 from django.views.generic.edit import DeleteView
 from moviepy.editor import *
@@ -39,15 +39,27 @@ def create_movie(request):
     return render(request, 'add_movie.html', {'form':form})
 
 def dashboard(request, pk):
+    if request.user.id != pk:
+        permission_error = 'You Have No Permission To Be Here !!!'
+        return render(request, 'dashboard.html', {'permission_error':permission_error})
     film = Movie.objects.all().order_by('-upload_date')
+    cats = Category.objects.all()
     data = {
         'film': film,
+        'cats': cats,
     }
     return render(request, 'dashboard.html', data)
 
 def movie_detail(request, pk):
+    if not request.user.id:
+        return render(request, 'blank.html', {})
+    favs = Movie.objects.filter(favourites=request.user)
     mov_for_you = Movie.objects.all().order_by('-upload_date')
     mov = Movie.objects.get(id=pk)
+    if mov in favs:
+        fav = True
+    else:
+        fav = False
     collect_likes = get_object_or_404(Movie, id=pk)
     liked = False
     disliked = False
@@ -63,6 +75,7 @@ def movie_detail(request, pk):
         'total_dislikes': total_dislikes,
         'liked': liked,
         'movies_for_you': mov_for_you,
+        'fav':fav,
     }
     return render(request, 'video_modal.html', data)
 
@@ -79,9 +92,10 @@ def add_favourite(request, id):
     user = request.user
     if film.favourites.filter(id=request.user.id).exists():
         film.favourites.remove(request.user)
+        return redirect('detail', id)
     else:
         film.favourites.add(request.user)
-        return redirect('library')
+        return redirect('detail', id)
     return redirect('library')
 
 # def list_favourites(request):
@@ -126,13 +140,28 @@ def add_dislikes(request, pk):
     return redirect('detail', pk)
 
 def my_movies(request):
+    if not request.user.id:
+        return render(request, 'blank.html', {})
     if not request.user:
         permission_error = "You Don't Have Permission To View This Page"
         return render(request, 'my_movies.html', {'permission_error':permission_error})
     favs = Movie.objects.filter(favourites=request.user)
     movs = Movie.objects.filter(uploader=request.user)
+    cats = Category.objects.all()
     data = {
         'movs':movs,
-        'favs':favs
+        'favs':favs,
+        'cats':cats
         }
     return render(request, 'library.html', data)
+
+def terms(request):
+    return render(request, 'terms.html', {})
+
+def settings(request):
+    if not request.user.id:
+        return render(request, 'blank.html', {})
+    return render(request, 'settings.html', {})
+
+def my_videos(request):
+    return render(request, 'my_videos.html', {})

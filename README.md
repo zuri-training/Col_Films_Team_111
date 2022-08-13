@@ -21,3 +21,8 @@ A platform that operates like a movie streaming platform but for short movies cr
 
 Project Documentation here @wiki  https://github.com/proj-team-111/col_films/wiki
 
+# App Requirements
+  -requirements.txt
+
+# Architecture
+  -Monolith(Django Templating)

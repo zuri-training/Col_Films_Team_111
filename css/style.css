@@ -846,6 +846,38 @@ like a tickmark */
   border: none;
 }
 
+.otp-text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 38px;
+  color: #ffffff;
+  width: 864px;
+  height: 76px;
+}
+
+.otp-input {
+  color: #ffffff;
+  margin-right: 0.3rem;
+  text-align: center;
+  background: transparent;
+  width: 36.8px;
+  height: 40px;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  transition: all 0.1s;
+}
+
+.otp-input-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.reset-password {
+  color: #fca311;
+}
+
 /* END OF FORGOT PASSWORD STYLES */
 
 /* TERMS STYLES */
@@ -1607,6 +1639,54 @@ footer p {
   .forgot-password-form input[type="email"] {
     width: 560px;
     height: 96px;
+  }
+
+  .otp-input-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .otp-input {
+    width: 75px;
+    color: #ffffff;
+    margin-right: 0.3rem;
+    text-align: center;
+    font-family: "Raleway", sans-serif;
+    height: 75px;
+    font-weight: 400;
+    font-size: 3rem;
+    line-height: 28px;
+    background: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    transition: all 0.1s;
+  }
+
+  .otp-input:focus {
+    border: 1px solid #40dee8;
+  }
+  .otp-text {
+    font-size: 1.5rem;
+    line-height: 38px;
+  }
+  .expire {
+    font-style: italic;
+  }
+  .time {
+    font-weight: 700;
+    font-style: italic;
+  }
+
+  .reset-password {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 19px;
+    color: #fca311;
+  }
+
+  .reset-password:hover {
+    text-decoration: underline;
   }
 
   /* END OF FORGOT PASSWORD STYLES */

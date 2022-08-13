@@ -1,6 +1,9 @@
+from imaplib import _Authenticator
 from django.shortcuts import render,redirect
 # Imports for the models, serializers
-from django.contrib.auth import get_user_model
+from django.contrib.auth import get_user_model, authenticate, login, logout
+
+from django.contrib import messages
 from django.contrib.auth.models import User
 from .models import NewUser, Otp
 # Imports For the api
@@ -9,6 +12,8 @@ import requests
 from django.core.mail import send_mail
 import math
 import random
+#import forms from form.py
+from .forms import LoginForm
 
 User = get_user_model()
 
@@ -138,6 +143,7 @@ def create_user(request):
                     except:
                         if password == password2:
                             User.objects.create_user(email=str(student['email']), password=password)
+                            
                         else:
                             password_error = 'Both Passwords Must Match'
                             return render(request, 'create_user.html', {'password_error':password_error})
@@ -175,3 +181,22 @@ def create_user(request):
                 pass
 
     return render(request, 'create_user.html', {'data':reg, 'error':error, 'no_permission':no_permission})
+
+def user_login(request):
+    if request.method == 'POST':
+        email = request.POST.get('emailInput','')
+        password = request.POST.get('password','')
+        user = authenticate(request, email = email, password = password)
+        if user is not None:
+            
+            login(request, user)
+        #redirect to dashboard
+            return redirect("get_reg")
+        else:
+            messages.info(request, "Email or password is incorrect")
+    return render(request, 'sign-in.html')
+
+def user_logout(request):
+    logout(request)
+    return redirect('user_login')
+

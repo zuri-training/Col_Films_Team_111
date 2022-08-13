@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <link rel="stylesheet" href="{% static 'editedStyle.css' %}">
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=!, initial-scale=1.0" />
@@ -18,12 +18,12 @@
 </head>
 
 <body>
-  <header>
+  <header class="createUserHeader">
     <div class="logo">
       <img src="/static/desktop-logo.png" alt="logo" />
     </div>
   </header>
-  <main>
+  <main class="createUserMain">
     <form method="post" id="form" action="">
         {% csrf_token %}
       <div class="content" id="step1">

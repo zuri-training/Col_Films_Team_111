@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=!, initial-scale=1.0" />
     <link rel="stylesheet" href="https://fonts.google.com/specimen/Open+Sans" />
     <link rel="icon" type="images/png" href="/static/logo.png" />
-    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link rel="stylesheet" href="{% static 'editedStyle.css' %}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,15 +18,16 @@
 </head>
 
 <body>
-    <header>
+    <header class="createUserHeader">
         <div class="logo">
             <img src="/static/desktop-logo.png" alt="logo" />
         </div>
     </header>
+    
     {% if access_error %}
     <h1>{{access_error}}</h1>
     {%else%}
-    <main>
+    <main class="createUserMain">
         <form method="POST" id="form" action="">
             {% csrf_token %}
             <div class="content" id="step2">
@@ -78,6 +79,7 @@
                         <span class="count-digit">0</span>
                     </div>
                 </div>
+
                 <p>I did not receive any otp.<strong><button type="submit">RESEND<button></strong></p>                <br />
                 <button type="submit" class="btn">
                     Verify
@@ -88,7 +90,7 @@
         </form>
     </main>
     {%endif%}
-    
+
     <footer>
         <div class="footer-wrapper">
             <div class="footer-description">

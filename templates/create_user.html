@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=!, initial-scale=1.0" />
     <link rel="stylesheet" href="https://fonts.google.com/specimen/Open+Sans" />
     <link rel="icon" type="images/png" href="/static/logo.png" />
-    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link rel="stylesheet" href="{% static 'editedStyle.css' %}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,16 +18,16 @@
 </head>
 
 <body>
-    <header>
+    <header class="createUserHeader">
         <div class="logo">
             <img src="/static/desktop-logo.png" alt="logo" />
         </div>
     </header>
     {% if access_error %}
     <h1>{{access_error}}</h1>
-    {% else %}
-    <main>
-        <form method="post" id="form">
+    {%else%}
+    <main class="createUserMain">
+        <form method="post" id="form" action=".">
             {%csrf_token%}
             <div class="content" id="step3">
                 <h4>Step 3 of 3</h4>
@@ -72,19 +72,19 @@
                 <img class="footer-logo" src="/static/desktop-footer-logo.png" alt="one-cube logo" srcset="/static/mobile-footer-logo.png 77w,
                         /static/desktop-footer-logo.png 95w" sizes="(min-width: 1025px) 95px,
                         77px">
-    
+
                 <p class="footer-desc-text">Your one stop streaming platform for short college films by college students
                 </p>
             </div>
-    
+
             <div class="footer-site-map">
                 <h2 class="footer-headings">Site Map</h2>
                 <ul class="footer-list">
                     <li>
-                        <a href="#" class="footer-link">Home</a>
+                        <a href="" class="footer-link">Home</a>
                     </li>
                     <li>
-                        <a href="#" class="footer-link">FAQ</a>
+                        <a href="" class="footer-link">FAQ</a>
                     </li>
                     <li>
                         <a href="" class="footer-link">Privacy Policies</a>
@@ -100,7 +100,7 @@
                     </li>
                 </ul>
             </div>
-    
+
             <div class="footer-contact">
                 <h2 class="footer-headings">Contact us</h2>
                 <div class="socials-icon">
@@ -129,7 +129,7 @@
                     <img src="/static/desktop-phone.png" alt="phone-icon" srcset="/static/desktop-phone.png 29.19w,
                         /static/phone.png 18.24w" sizes="(min-width: 1025px) 29.19px,
                         18.24px">
-    
+
                     <p>+2348116455541</p>
                 </div>
             </div>

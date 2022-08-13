@@ -8,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=!, initial-scale=1.0" />
   <link rel="stylesheet" href="https://fonts.google.com/specimen/Open+Sans" />
-  <link rel="icon" type="images/png" href="/static/logo.png" />
+  <link rel="icon" type="images/png" href="{%static 'logo.png'%}" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,7 +20,7 @@
 <body>
   <header class="createUserHeader">
     <div class="logo">
-      <img src="/static/desktop-logo.png" alt="logo" />
+      <img src="{%static 'desktop-logo.png'%}" alt="logo" />
     </div>
   </header>
   <main class="createUserMain">
@@ -59,8 +59,8 @@
   <footer>
     <div class="footer-wrapper">
         <div class="footer-description">
-            <img class="footer-logo" src="/static/desktop-footer-logo.png" alt="one-cube logo" srcset="/static/mobile-footer-logo.png 77w,
-                    /static/desktop-footer-logo.png 95w" sizes="(min-width: 1025px) 95px,
+            <img class="footer-logo" src="{%static 'desktop-footer-logo.png'%}" alt="one-cube logo" srcset="{%static 'mobile-footer-logo.png'%} 77w,
+                    {%static 'desktop-footer-logo.png'%} 95w" sizes="(min-width: 1025px) 95px,
                     77px">
 
             <p class="footer-desc-text">Your one stop streaming platform for short college films by college students
@@ -71,10 +71,10 @@
             <h2 class="footer-headings">Site Map</h2>
             <ul class="footer-list">
                 <li>
-                    <a href="#" class="footer-link">Home</a>
+                    <a href="{%url 'home'%}" class="footer-link">Home</a>
                 </li>
                 <li>
-                    <a href="#" class="footer-link">FAQ</a>
+                    <a href="" class="footer-link">FAQ</a>
                 </li>
                 <li>
                     <a href="" class="footer-link">Privacy Policies</a>
@@ -86,7 +86,7 @@
                     <a href="" class="footer-link">About Us </a>
                 </li>
                 <li>
-                    <a href="" class="footer-link">Terms of Use</a>
+                    <a href="{%url 'terms'%}" class="footer-link">Terms of Use</a>
                 </li>
             </ul>
         </div>
@@ -95,29 +95,29 @@
             <h2 class="footer-headings">Contact us</h2>
             <div class="socials-icon">
                 <a href="" class="footer-link">
-                    <img src="/static/desktop-insta.png" alt="instagram-icon" srcset="/static/desktop-insta.png 31.47w,
-                    /static/insta.png 19.67w" sizes="(min-width: 1025px) 31.47px,
+                    <img src="{%static 'desktop-insta.png'%}" alt="instagram-icon" srcset="{%static 'desktop-insta.png'%} 31.47w,
+                    {%static 'insta.png' %} 19.67w" sizes="(min-width: 1025px) 31.47px,
                     19.67px">
                 </a>
                 <a href="" class="footer-link">
-                    <img src="/static/desktop-twitter.png" alt="twitter-icon" srcset="/static/desktop-twitter.png 35.83w,
-                    /static/twitter.png 22.4w" sizes="(min-width: 1025px) 35.83px,
+                    <img src="{%static 'desktop-twitter.png' %}" alt="twitter-icon" srcset="{%static 'desktop-twitter.png'%} 35.83w,
+                    {%static 'twitter.png'%} 22.4w" sizes="(min-width: 1025px) 35.83px,
                     22.4px">
                 </a>
                 <a href="" class="footer-link">
-                    <img src="/static/desktop-fb.png" alt="fb-icon" srcset="/static/desktop-fb.png 19w,
-                    /static/fb.png 11.88w" sizes="(min-width: 1025px) 19px,
+                    <img src="{%static 'desktop-fb.png'%}" alt="fb-icon" srcset="{%static 'desktop-fb.png'%} 19w,
+                    {%static 'fb.png'%} 11.88w" sizes="(min-width: 1025px) 19px,
                     11.88px">
                 </a>
                 <a href="" class="footer-link">
-                    <img src="/static/desktop-mail.png" alt="mail-icon" srcset="/static/desktop-mail.png 31.3w,
-                    /static/mail.png 19.56w" sizes="(min-width: 1025px) 31.3px,
+                    <img src="{%static 'desktop-mail.png'%}" alt="mail-icon" srcset="{%static 'desktop-mail.png'%} 31.3w,
+                    {%static 'mail.png'%} 19.56w" sizes="(min-width: 1025px) 31.3px,
                     19.56px">
                 </a>
             </div>
             <div class="footer-phone">
-                <img src="/static/desktop-phone.png" alt="phone-icon" srcset="/static/desktop-phone.png 29.19w,
-                    /static/phone.png 18.24w" sizes="(min-width: 1025px) 29.19px,
+                <img src="{%static 'desktop-phone.png' %}" alt="phone-icon" srcset="{%static 'desktop-phone.png' %} 29.19w,
+                    {%static 'phone.png'%} 18.24w" sizes="(min-width: 1025px) 29.19px,
                     18.24px">
 
                 <p>+2348116455541</p>

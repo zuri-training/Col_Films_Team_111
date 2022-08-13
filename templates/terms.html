@@ -202,7 +202,11 @@
                 <h2 class="footer-headings">Site Map</h2>
                 <ul class="footer-list">
                     <li>
-                        <a href="" class="footer-link">Home</a>
+                        {%if user.is_authenticated %}
+                        <a href="{%url 'dashboard' user.id%}" class="footer-link">Home</a>
+                        {%else%}
+                        <a href="{%url 'home'%}" class="footer-link">Home</a>
+                        {%endif%}
                     </li>
                     <li>
                         <a href="" class="footer-link">FAQ</a>
@@ -217,7 +221,7 @@
                         <a href="" class="footer-link">About Us </a>
                     </li>
                     <li>
-                        <a href="" class="footer-link">Terms of Use</a>
+                        <a href="{%url 'terms'%}" class="footer-link">Terms of Use</a>
                     </li>
                 </ul>
             </div>

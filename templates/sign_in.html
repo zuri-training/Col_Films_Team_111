@@ -27,7 +27,7 @@
                 {%endfor%}
                 {%endif%}
 
-                <form class="sign-in-area" action="" method="post">
+                <form class="sign-in-area"  method="post">
                     {% csrf_token %}
                     <input class="sign-in-email" type="email" placeholder="Input e-mail address" name="emailInput"><br>
                     <input type="password" name="password" placeholder="Input password"><br>
@@ -54,7 +54,7 @@
                 <h2 class="footer-headings">Site Map</h2>
                 <ul class="footer-list">
                     <li>
-                        <a href="" class="footer-link">Home</a>
+                        <a href="{%url 'home'%}" class="footer-link">Home</a>
                     </li>
                     <li>
                         <a href="" class="footer-link">FAQ</a>
@@ -69,7 +69,7 @@
                         <a href="" class="footer-link">About Us </a>
                     </li>
                     <li>
-                        <a href="" class="footer-link">Terms of Use</a>
+                        <a href="{%url 'terms'%}" class="footer-link">Terms of Use</a>
                     </li>
                 </ul>
             </div>

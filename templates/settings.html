@@ -76,38 +76,15 @@
                                 <div class="ince">
                                     <i class="fas fa-home"></i>
                                 </div>
-                                <h2>Home</h2>
-                            </div>
-                            <div class="rside">
-                                <div class="ince hastag">
-                                    <i class="fas fa-user-check"></i>
-                                </div>
-                                <h2>Following</h2>
+                                <a href="{%url 'dashboard' user.id%}"><h2>Home</h2></a>
                             </div>
                             <div class="rside">
                             <div class="ince">
                                 <i class="fas fa-folder-open"></i>
                             </div>    
-                            <h2>Library</h2>
+                            <a href="{%url 'library'%}"><h2>Library</h2></a>
                             </div>
-                            <div class="rside">
-                                <div class="ince">
-                                    <i class="fas fa-certificate"></i>
-                                </div>
-                                <h2>New</h2>
-                            </div>
-                            <div class="rside">
-                                <div class="ince bookmarks">
-                                    <i class="fas fa-file"></i>
-                                </div>
-                                <h2>MyList</h2>
-                            </div>
-                            <div class="rside">
-                            <div class="ince lists">
-                                <i class="fas fa-video"></i>
-                            </div> 
-                            <h2>Video</h2>
-                            </div>
+
                             <div class="rside">
                                 <div class="ince">
                                     <i class="fas fa-cog"></i>
@@ -118,7 +95,7 @@
                                 <div class="ince">            
                                     <i class="fas fa-sign-out-alt"></i>
                                 </div>
-                                <h2>Logout</h2>
+                                <a href="{%url 'user_logout'%}"><h2>Logout</h2></a>
                             </div>
                             
                         </div>
@@ -158,13 +135,15 @@
                                 </div>
 
                                 <div class="upload-form">
-                                    <h2>Name, Username, Email address</h2>
+                                    {%if user.is_authenticated%}
+                                    <h2>Name, username, Email Address</h2>
                                     <form id="upload-form" method="POST" auto-complete="off">
-                                        <input type="text" name="fname" placeholder="Fullname" id="fname" maxlength="45" required><br><br>
-                                        <input type="text" name="Uname" placeholder="Username" id="uname" required><br><br>
-                                        <input type="text" name="Email" placeholder="Email address" id="email" maxlength="45" required><br><br>
+                                        <input type="text" name="fname" placeholder="{{user.first_name}} {{user.last_name}}" id="fname" maxlength="45" required><br><br>
+                                        <input type="text" name="Uname" placeholder="{{user.username}}" id="uname" required><br><br>
+                                        <input type="text" name="Email" placeholder="{{user.email}}" id="email" maxlength="45" required><br><br>
                                         <button><a href="">Save</a></button>                      
                                     </form>
+                                    {%endif%}
                                 </div>
 
                             </div>
@@ -192,7 +171,7 @@
                 <h2 class="footer-headings">Site Map</h2>
                 <ul class="footer-list">
                     <li>
-                        <a href="" class="footer-link">Home</a>
+                        <a href="{%url 'dashboard' user.id%}" class="footer-link">Home</a>
                     </li>
                     <li>
                         <a href="" class="footer-link">FAQ</a>
@@ -207,7 +186,7 @@
                         <a href="" class="footer-link">About Us </a>
                     </li>
                     <li>
-                        <a href="" class="footer-link">Terms of Use</a>
+                        <a href="{%url 'terms'%}" class="footer-link">Terms of Use</a>
                     </li>
                 </ul>
             </div>

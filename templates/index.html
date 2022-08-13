@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/landing_page.css'%}">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
     <title>OneCube</title>
 </head>
 <body>
@@ -24,8 +25,11 @@
 
         <div class="header-right-area">
             <a href="{%url 'user_login'%}" class="header-sign-in">Sign In</a>
+            {%if user.is_authenticated%}
+            <a href="{%url 'dashboard' user.id%}"><button class="header-get-started">Go To Dashboard</button></a>
+            {%else%}
             <a href="{%url 'get_reg'%}"><button class="header-get-started">Get Started</button></a>
-            
+            {%endif%}
         </div>
     </header>
 
@@ -40,7 +44,7 @@
                     college students. </p>
                 <p>Explore the cinematic world
                     while in school!</p>
-                <a href=""><button>Get Started</button></a>
+                <a href="{%url 'get_reg'%}"><button>Get Started</button></a>
             </div>
 
         </div>
@@ -75,7 +79,7 @@
                 <p>Share your masterpiece with other college students.</p>
             </div>
         </div>
-        <a href=""><button>Get Started</button></a>
+        <a href="{%url 'get_reg'%}"><button>Get Started</button></a>
     </div>
 
     <div class="landing-section-3">
@@ -222,7 +226,7 @@
                 poster="images/how-to.PNG"></video>
         </div>
         <h1>What are you waiting for?</h1>
-        <a href=""><button>Get Started</button></a>
+        <a href="{%url 'get_reg'%}"><button>Get Started</button></a>
     </div>
 
     <footer>
@@ -240,7 +244,7 @@
                 <h2 class="footer-headings">Site Map</h2>
                 <ul class="footer-list">
                     <li>
-                        <a href="" class="footer-link">Home</a>
+                        <a href="{%url 'home'%}" class="footer-link">Home</a>
                     </li>
                     <li>
                         <a href="" class="footer-link">FAQ</a>
@@ -255,7 +259,7 @@
                         <a href="" class="footer-link">About Us </a>
                     </li>
                     <li>
-                        <a href="" class="footer-link">Terms of Use</a>
+                        <a href="{%url 'terms'%}" class="footer-link">Terms of Use</a>
                     </li>
                 </ul>
             </div>
@@ -264,29 +268,29 @@
                 <h2 class="footer-headings">Contact us</h2>
                 <div class="socials-icon">
                     <a href="" class="footer-link">
-                        <img src="images/desktop-insta.png" alt="instagram-icon" srcset="images/desktop-insta.png 31.47w,
-                        images/insta.png 19.67w" sizes="(min-width: 1025px) 31.47px,
+                        <img src="{%static 'desktop-insta.png'%}" alt="instagram-icon" srcset="{%static 'desktop-insta.png'%} 31.47w,
+                        {%static 'insta.png' %} 19.67w" sizes="(min-width: 1025px) 31.47px,
                         19.67px">
                     </a>
                     <a href="" class="footer-link">
-                        <img src="images/desktop-twitter.png" alt="twitter-icon" srcset="images/desktop-twitter.png 35.83w,
-                        images/twitter.png 22.4w" sizes="(min-width: 1025px) 35.83px,
+                        <img src="{%static 'desktop-twitter.png' %}" alt="twitter-icon" srcset="{%static 'desktop-twitter.png'%} 35.83w,
+                        {%static 'twitter.png'%} 22.4w" sizes="(min-width: 1025px) 35.83px,
                         22.4px">
                     </a>
                     <a href="" class="footer-link">
-                        <img src="images/desktop-fb.png" alt="fb-icon" srcset="images/desktop-fb.png 19w,
-                        images/fb.png 11.88w" sizes="(min-width: 1025px) 19px,
+                        <img src="{%static 'desktop-fb.png'%}" alt="fb-icon" srcset="{%static 'desktop-fb.png'%} 19w,
+                        {%static 'fb.png'%} 11.88w" sizes="(min-width: 1025px) 19px,
                         11.88px">
                     </a>
                     <a href="" class="footer-link">
-                        <img src="images/desktop-mail.png" alt="mail-icon" srcset="images/desktop-mail.png 31.3w,
-                        images/mail.png 19.56w" sizes="(min-width: 1025px) 31.3px,
+                        <img src="{%static 'desktop-mail.png'%}" alt="mail-icon" srcset="{%static 'desktop-mail.png'%} 31.3w,
+                        {%static 'mail.png'%} 19.56w" sizes="(min-width: 1025px) 31.3px,
                         19.56px">
                     </a>
                 </div>
                 <div class="footer-phone">
-                    <img src="images/desktop-phone.png" alt="phone-icon" srcset="images/desktop-phone.png 29.19w,
-                        images/phone.png 18.24w" sizes="(min-width: 1025px) 29.19px,
+                    <img src="{%static 'desktop-phone.png' %}" alt="phone-icon" srcset="{%static 'desktop-phone.png' %} 29.19w,
+                        {%static 'phone.png'%} 18.24w" sizes="(min-width: 1025px) 29.19px,
                         18.24px">
 
                     <p>+2348116455541</p>

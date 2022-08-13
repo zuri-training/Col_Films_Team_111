@@ -96,14 +96,6 @@
                         <p class="mobileBarListP">Home</p>
                     </li>
                 </a>
-                <a class="mobileBarLink" href="#">
-                    <li class="mobileBarList">
-                        <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M2.23706 18.7559L2.2371 17.4868C2.2371 16.9897 2.60984 16.8337 2.75847 16.7649L8.24225 14.1733C8.63529 13.9926 8.90659 13.6199 8.95937 13.19C8.98545 12.9785 8.95708 12.7639 8.87697 12.5665C8.79686 12.3691 8.66766 12.1955 8.50167 12.0622C7.20448 11.0192 6.60006 8.7265 6.60006 7.50555V4.38055C6.60006 3.07396 8.87131 1.2568 10.9734 1.2568C13.0938 1.2568 15.3429 3.04551 15.3429 4.38055V7.50555C15.3429 8.70834 14.8434 11.0095 13.5037 12.066C13.3357 12.1984 13.2045 12.3718 13.1226 12.5696C13.0407 12.7674 13.0109 12.983 13.0361 13.1956C13.0873 13.6286 13.3598 14.0029 13.755 14.1848L16.9207 15.6943L17.665 14.6379L14.2764 13.0483C16.0063 11.6848 16.5917 9.00629 16.5917 7.50522V4.38022C16.5917 2.31043 13.7307 0.00585938 10.9734 0.00585938C8.21601 0.00585938 5.35127 2.31045 5.35127 4.38022V7.50522C5.35127 8.87059 5.97348 11.6332 7.71992 13.0371L2.23614 15.6293C2.23614 15.6293 0.988281 16.1861 0.988281 16.8793V18.7559C0.988281 19.4465 1.54712 20.0059 2.23612 20.0059H14.7185L13.7038 18.7555L2.23706 18.7559ZM20.7486 14.1392C20.4773 13.926 20.0846 13.9745 19.8723 14.2462L17.2021 18.3245L15.5424 16.6621C15.2986 16.4179 14.903 16.4179 14.6592 16.6621C14.4154 16.9062 14.4154 17.3021 14.6592 17.5462L16.8668 19.757C17.1106 20.0012 17.5058 20.0012 17.7497 19.757C17.809 19.698 17.8533 19.6292 17.8839 19.556L20.8557 15.0165C21.068 14.7448 21.0203 14.3518 20.7486 14.1392Z" fill="white"/>
-                        </svg>
-                        <p class="mobileBarListP">Following</p>
-                    </li>
-                </a>
                 <a class="mobileBarLink" href="{%url 'library'%}">
                     <li class="mobileBarList">
                         <svg width="22" height="15" viewBox="0 0 22 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -112,7 +104,7 @@
                         <p class="mobileBarListP">Library</p>
                     </li>
                 </a>
-                <a class="mobileBarLink" href="#">
+                <a class="mobileBarLink" href="{%url 'settings'%}">
                     <li class="mobileBarList">
                         <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M8.75 1.5V4.5L7.25 5.25L5 3L2 6L4.25 8.25L3.5 9.75H0.5V14.25H3.5L4.25 15.75L2 18L5 21L7.25 18.75L8.75 19.5V22.5H13.25V19.5L14.75 18.75L17 21L20 18L17.75 15.75L18.5 14.25H21.5V9.75H18.5L17.75 8.25L20 6L17 3L14.75 5.25L13.25 4.5V1.5H8.75Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -160,7 +152,7 @@
                         <p class="sideBarHeadingListP">Library</p>
                     </li>
                 </a>
-                <a class="sideBarHeadingLink" href="#">
+                <a class="sideBarHeadingLink" href="{%url 'settings'%}">
                     <li class="sideBarHeadingList">
                         <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M8.75 1.5V4.5L7.25 5.25L5 3L2 6L4.25 8.25L3.5 9.75H0.5V14.25H3.5L4.25 15.75L2 18L5 21L7.25 18.75L8.75 19.5V22.5H13.25V19.5L14.75 18.75L17 21L20 18L17.75 15.75L18.5 14.25H21.5V9.75H18.5L17.75 8.25L20 6L17 3L14.75 5.25L13.25 4.5V1.5H8.75Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -213,10 +205,19 @@
                                 <path d="M17.5106 9.67717C17.5106 8.6704 18.3267 7.85425 19.3335 7.85425C20.3403 7.85425 21.1564 8.6704 21.1564 9.67717C21.1564 10.6839 20.3403 11.5001 19.3335 11.5001C18.3267 11.5001 17.5106 10.6839 17.5106 9.67717Z" fill="white"/>
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M19.4804 0.697906C15.5514 0.36284 11.6018 0.343395 7.66966 0.639758L7.38787 0.660997C3.63805 0.943619 0.739746 4.06858 0.739746 7.82904V20.2501C0.739746 20.6349 0.941967 20.9914 1.27225 21.1889C1.60254 21.3863 2.0123 21.3957 2.35126 21.2135L8.0545 18.1485C8.31979 18.006 8.61627 17.9313 8.91744 17.9313H22.008C23.659 17.9313 25.0739 16.751 25.3698 15.1268C25.9696 11.835 26.017 8.46625 25.51 5.15889L25.3606 4.18425C25.0886 2.40982 23.637 1.05238 21.8483 0.899844L19.4804 0.697906ZM7.83407 2.82107C11.6496 2.5335 15.482 2.55237 19.2945 2.8775L21.6625 3.07943C22.4446 3.14614 23.0794 3.73974 23.1984 4.51568L23.3477 5.49032C23.8179 8.55761 23.774 11.6818 23.2177 14.7346C23.1112 15.3191 22.6021 15.7438 22.008 15.7438H8.91744C8.25486 15.7438 7.6026 15.908 7.01897 16.2217L2.92725 18.4206V7.82904C2.92725 5.21293 4.94356 3.03893 7.55227 2.84231L7.83407 2.82107Z" fill="white"/>
                             </svg>
+                            <a href="{{film.movie.url}}" download>
                             <svg width="23" height="26" viewBox="0 0 23 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M1.29199 18.6979C1.89605 18.6979 2.38574 19.1876 2.38574 19.7917V22.7083C2.38574 22.9097 2.54897 23.0729 2.75033 23.0729H20.2503C20.4517 23.0729 20.6149 22.9097 20.6149 22.7083V19.7917C20.6149 19.1876 21.1046 18.6979 21.7087 18.6979C22.3127 18.6979 22.8024 19.1876 22.8024 19.7917V22.7083C22.8024 24.1178 21.6598 25.2604 20.2503 25.2604H2.75033C1.34085 25.2604 0.198242 24.1178 0.198242 22.7083V19.7917C0.198242 19.1876 0.687931 18.6979 1.29199 18.6979Z" fill="#E5E5E5"/>
                                 <path d="M9.65983 0.46875C8.90968 0.46875 8.28392 1.04205 8.21842 1.78934C7.99436 4.34538 7.95483 6.91399 8.10004 9.47519C7.73986 9.49509 7.37981 9.51816 7.01993 9.54439L4.84773 9.70273C4.01022 9.76378 3.54203 10.6976 3.99418 11.4053C5.54299 13.8291 7.53867 15.9363 9.87484 17.6145L10.7451 18.2396C11.1964 18.5639 11.8044 18.5639 12.2557 18.2396L13.126 17.6145C15.4621 15.9363 17.4578 13.8291 19.0066 11.4053C19.4588 10.6976 18.9906 9.76379 18.1531 9.70273L15.9809 9.54439C15.621 9.51816 15.2609 9.49509 14.9008 9.47519C15.046 6.91399 15.0064 4.34538 14.7824 1.78933C14.7169 1.04205 14.0911 0.46875 13.341 0.46875H9.65983Z" fill="#E5E5E5"/>
-                            </svg>
+                            </svg></a>
+                            {%if fav %}
+                            <a href="{%url 'add_favourites' film.id%}"><span><img height="20" width="20" src="{%static 'star.png'%}" alt=""></span></a>
+                            {%else%}
+                            <a href="{%url 'add_favourites' film.id%}">
+                            <svg width="20" height="20" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.7208 1.4626L6.45413 2.92926C6.55413 3.13343 6.8208 3.32926 7.0458 3.36676L8.37496 3.5876C9.22496 3.72926 9.42496 4.34593 8.81246 4.95426L7.77913 5.9876C7.60413 6.1626 7.50829 6.5001 7.56246 6.74176L7.8583 8.02093C8.09163 9.03343 7.55413 9.4251 6.6583 8.89593L5.41246 8.15843C5.18746 8.0251 4.81663 8.0251 4.58746 8.15843L3.34163 8.89593C2.44996 9.4251 1.9083 9.02926 2.14163 8.02093L2.43746 6.74176C2.49163 6.5001 2.3958 6.1626 2.2208 5.9876L1.18746 4.95426C0.579129 4.34593 0.774962 3.72926 1.62496 3.5876L2.95413 3.36676C3.17496 3.32926 3.44163 3.13343 3.54163 2.92926L4.27496 1.4626C4.67496 0.666764 5.32496 0.666764 5.7208 1.4626Z" stroke="#FCA311" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg></a>
+                            {%endif%}
                         </div>
                     </div>
                     <div class="videoI controlModal mobile">
@@ -230,7 +231,15 @@
                            {%if film.total_dislikes%}
                             {{film.total_dislikes}}
                             {%endif%}
-                            <img src="{%static 'download.png'%}" alt="#">
+                            <a href="{{film.movie.url}}" download><img  src="{%static 'download.png'%}" alt="#"></a>
+                            {%if fav %}
+                            <a href="{%url 'add_favourites' film.id%}"><span><img height="10" width="10" src="{%static 'star.png'%}" alt=""></span></a>
+                            {%else%}
+                            <a href="{%url 'add_favourites' film.id%}">
+                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.7208 1.4626L6.45413 2.92926C6.55413 3.13343 6.8208 3.32926 7.0458 3.36676L8.37496 3.5876C9.22496 3.72926 9.42496 4.34593 8.81246 4.95426L7.77913 5.9876C7.60413 6.1626 7.50829 6.5001 7.56246 6.74176L7.8583 8.02093C8.09163 9.03343 7.55413 9.4251 6.6583 8.89593L5.41246 8.15843C5.18746 8.0251 4.81663 8.0251 4.58746 8.15843L3.34163 8.89593C2.44996 9.4251 1.9083 9.02926 2.14163 8.02093L2.43746 6.74176C2.49163 6.5001 2.3958 6.1626 2.2208 5.9876L1.18746 4.95426C0.579129 4.34593 0.774962 3.72926 1.62496 3.5876L2.95413 3.36676C3.17496 3.32926 3.44163 3.13343 3.54163 2.92926L4.27496 1.4626C4.67496 0.666764 5.32496 0.666764 5.7208 1.4626Z" stroke="#FCA311" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg></a>
+                            {%endif%}
                         </div>
                     </div>
                 </div>
@@ -256,26 +265,26 @@
                         <p>59 Comments</p>
                     </div>
                     <div class="videoI userComment">
-                        <img src="./images/Ellipse 12.png" alt="user">
+                        <img src="{%static 'Ellipse 12.png'%}" alt="user">
                         <input type="text" name="comment" id="comment" placeholder="Add a comment">
                     </div>
                     <div class="videoI otherComments">
                         <div class="commentBodyIcons">
-                            <img src="./images/Ellipse 13.png" alt="#">
+                            <img src="{static 'Ellipse 13.png'%}" alt="#">
                             <div class="commentBody">
                                 <div class="commentor">
                                     <p><b>PHIL Karuhanga Joseph</b> <span>2 weeks ago</span></p>
                                     <p>Just love the way you gracefully do your videos.</p>
                                 </div>
                                 <div class="commentIcons">
-                                    <img src="./images/thumbsup.png" alt="#">
-                                    <img src="./images/thumbsdown.png" alt="#">
+                                    <img src="{%static 'thumbsup.png'%}" alt="#">
+                                    <img src="{%static 'thumbsdown.png'%}" alt="#">
                                     <p>Reply</p>
                                 </div>
                             </div>
                         </div>
                         <div class="commentBodyIcons">
-                            <img src="./images/Ellipse 14.png" alt="#">
+                            <img src="{%static 'Ellipse 14.png'%}" alt="#">
                             <div class="commentBody">
                                 <div class="commentor">
                                     <p><b>PHIL Karuhanga Joseph</b> <span>2 weeks ago</span></p>
@@ -285,28 +294,28 @@
                                         women live in a world of fear, vigilance and a constant need to be alert for self preservation.</p>
                                 </div>
                                 <div class="commentIcons">
-                                    <img src="./images/thumbsup.png" alt="#">
-                                    <img src="./images/thumbsdown.png" alt="#">
+                                    <img src="{%static 'thumbsup.png'%}" alt="#">
+                                    <img src="{%static 'thumbsdown.png'%}" alt="#">
                                     <p>Reply</p>
                                 </div>
                             </div>
                         </div>
                         <div class="commentBodyIcons">
-                            <img src="./images/Ellipse 15.png" alt="#">
+                            <img src="{%static 'Ellipse 15.png'%}" alt="#">
                             <div class="commentBody">
                                 <div class="commentor">
                                     <p><b>PHIL Karuhanga Joseph</b> <span>2 weeks ago</span></p>
                                     <p>Interestingly made film. Especially loved that opening shot! Though it would have been more interesting to have had a more unique/interesting ending!</p>
                                 </div>
                                 <div class="commentIcons">
-                                    <img src="./images/thumbsup.png" alt="#">
-                                    <img src="./images/thumbsdown.png" alt="#">
+                                    <img src="{%static 'thumbsup.png'%}" alt="#">
+                                    <img src="{%static 'thumbsdown.png'%}" alt="#">
                                     <p>Reply</p>
                                 </div>
                             </div>
                         </div>
                         <div class="commentBodyIcons">
-                            <img src="./images/Ellipse 16.png" alt="#">
+                            <img src="{%static 'Ellipse 16.png'%}" alt="#">
                             <div class="commentBody">
                                 <div class="commentor">
                                     <p><b>PHIL Karuhanga Joseph</b> <span>2 weeks ago</span></p>
@@ -316,8 +325,8 @@
                                         those sounds to understand she’s in a city.</p>
                                 </div>
                                 <div class="commentIcons">
-                                    <img src="./images/thumbsup.png" alt="#">
-                                    <img src="./images/thumbsdown.png" alt="#">
+                                    <img src="{%static 'thumbsup.png'%}" alt="#">
+                                    <img src="{%static 'thumbsdown.png'%}" alt="#">
                                     <p>Reply</p>
                                 </div>
                             </div>
@@ -389,7 +398,7 @@
                 <h2 class="footer-headings">Site Map</h2>
                 <ul class="footer-list">
                     <li>
-                        <a href="" class="footer-link">Home</a>
+                        <a href="{%url 'dashboard' user.id%}" class="footer-link">Home</a>
                     </li>
                     <li>
                         <a href="" class="footer-link">FAQ</a>
@@ -404,7 +413,7 @@
                         <a href="" class="footer-link">About Us </a>
                     </li>
                     <li>
-                        <a href="" class="footer-link">Terms of Use</a>
+                        <a href="{%url 'terms'%}" class="footer-link">Terms of Use</a>
                     </li>
                 </ul>
             </div>

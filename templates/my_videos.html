@@ -30,7 +30,7 @@
     <!-- header for mobile -->
     <header class="header-for-mobile">
         <div class="top-header">
-            <img class="logo" src="images/desktop-logo.png" alt="">
+            <img class="logo" src="{%static 'desktop-logo.png'%}" alt="">
             <div class="notification-panel">
                 <img src="{%static 'notification-icon.svg'%}" alt="">
                 <img src="{%static 'profile-photo.svg'%}" alt="">
@@ -38,7 +38,7 @@
         </div>
         
         <div class="search-fields">
-            <img id="hamburger" src="images/hamburger-icon.svg" alt="">
+            <img id="hamburger" src="{%static 'hamburger-icon.svg'%}" alt="">
             <input type="search" name="" id="">
             <select name="categories" id="">
                 <option value="Movies">Categories</option>
@@ -49,16 +49,13 @@
     <nav id="menu">
         <h4 >Menu</h4>
         <ul>
-            <li class="menu-items"><a href=""><img src="images/home-icon.svg" alt=""> Home</a></li>
-            <li class="menu-items"><a href=""><img src="images/following-icon.svg" alt=""> Following</a></li>
-            <li class="menu-items"><a href=""><img src="images/library-icon.svg" alt=""> Library</a></li>
-            <li class="menu-items"><a href=""><img src="images/new-release-icon.svg" alt=""> New Release</a></li>
-            <li class="menu-items"><a href=""><img src="images/mylist-icon.svg" alt=""> MyList</a></li>
-            <li class="menu-items"><a href=""><img src="images/videos-icon.svg" alt=""> My videos</a></li>
-            <li class="menu-items"><a href=""><img src="images/settings-icon.svg" alt=""> Settings</a></li>
-            <li class="menu-items"><a href=""><img src="images/logout-icon.svg" alt=""> Log out</a></li>
+            <li class="menu-items"><a href="{%url 'dashboard' user.id%}"><img src="{%static 'home-icon.svg'%}" alt=""> Home</a></li>
+            <li class="menu-items"><a href="{%url 'library'%}"><img src="{%static 'library-icon.svg'%}" alt=""> Library</a></li>
+            <li class="menu-items"><a href="{%url 'my_videos'%}"><img src="{%static 'videos-icon.svg'%}" alt=""> My videos</a></li>
+            <li class="menu-items"><a href="{%url 'settings'%}"><img src="{%static 'settings-icon.svg'%}" alt=""> Settings</a></li>
+            <li class="menu-items"><a href="{%url 'user_logout'%}"><img src="{%static 'logout-icon.svg'%}" alt=""> Log out</a></li>
         </ul>
-        <img id="close-icon" src="images/close.svg" alt="">
+        <img id="close-icon" src="{%static 'close.svg'%}" alt="">
     </nav>
     <!-- The Modal -->
     <aside id="myModal" class="modal">
@@ -66,11 +63,11 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h1>Upload videos</h1>
-                <img class="close" src="images/close.svg" alt="">
+                <img class="close" src="{%static 'close.svg'%}" alt="">
             </div>
             <div class="file-upload-container">
                 <label for="file-upload" class="custom-file-upload">
-                    <img src="images/upload-icon.svg" alt="" srcset="">
+                    <img src="{%static 'upload-icon.svg'%}" alt="" srcset="">
                     <span>Drag and drop files to upload</span> 
                     <button>SELECT FILES</button>
                 </label>
@@ -81,7 +78,7 @@
     <main class="my-videos">
         <div class="some-sorta-header">
             <h1>My Video Uploads</h1>
-            <button id="openModalButton" class="upload-video"><img src="images/plus-icon.svg" alt="">Upload a video</button>
+            <button id="openModalButton" class="upload-video"><img src="{%static 'plus-icon.svg'%}" alt="">Upload a video</button>
         </div>
         
         <table>
@@ -230,7 +227,7 @@
             <div class="site-map">
                 <h4>Site Map</h4>
                 <ul>
-                    <li><a href="">Home</a> </li>
+                    <li><a href="{%url 'dashboard' user.id%}">Home</a> </li>
                     <li><a href="">FAQ</a> </li>
                     <li><a href="">Privacy Policies</a> </li>
                     <li><a href="">Registration</a></li>
@@ -247,13 +244,13 @@
                     <img src="{%static 'desktop-mail.png'%}" alt="">
                 </div>
                 <div class="phone">
-                    <img src="images/desktop-phone.png" alt="">
+                    <img src="{%static 'images/desktop-phone.png'%}" alt="">
                     <p>+2348116455541</p>
                 </div>
             </div>
         </section>
         <p class="rights">All Rights Reserved</p>
     </footer>
-    <script src="index.js"></script>
+    <script src="{%static 'index.js'%}"></script>
 </body>
 </html>

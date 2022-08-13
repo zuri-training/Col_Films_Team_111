@@ -52,7 +52,8 @@
         <ul>
             <li class="menu-items"><a href="{%url 'dashboard' user.id%}"><img src="{%static 'home-icon.svg'%}" alt=""> Home</a></li>
             <li class="menu-items"><a href="{%url 'library'%}"><img src="{%static 'library-icon.svg'%}" alt=""> Library</a></li>
-            <li class="menu-items"><a href="{%url 'my_videos'%}"><img src="{%static 'videos-icon.svg'%}" alt=""> My videos</a></li>
+            <li class="menu-items"><a href="{%url 'add_movie'%}"><img src="{%static 'videos-icon.svg'%}" alt=""> Upload</a></li>
+            <li class="menu-items"><a href="{%url 'my_videos'%}"><img src="{%static 'videos-icon.svg'%}" alt=""> My Uploads</a></li>
             <li class="menu-items"><a href="{%url 'settings'%}"><img src="{%static 'settings-icon.svg'%}" alt=""> Settings</a></li>
             <li class="menu-items"><a href="{%url 'user_logout'%}"><img src="{%static 'logout-icon.svg'%}" alt=""> Log out</a></li>
         </ul>
@@ -88,134 +89,22 @@
                     <td>Name</td>
                     <td>Status</td>
                     <td>Upload Date</td>
-                    <td>Comments</td>
-                    <td>Views</td>
                     <td>Likes</td>
                     <td>Dislikes</td>
                     <td></td>
                 </tr>
             </thead>
             <tbody>
+                {% for film in movs %}
                 <tr>
-                    <td>Types of Lecturers in my college</td>
+                    <td>{{film.title}}</td>
                     <td>Published</td>
-                    <td>9th August, 2022</td>
-                    <td>0 comments</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td><img src="images/trash.png">Delete</td>
+                    <td>{{film.upload_date}}</td>
+                    <td>{{film.likes.count}}</td>
+                    <td>{{film.dislikes.count}}</td>
+                    <td><a href="{%url 'delete' film.id%}" style="text-decoration: none;"><img src="{%static 'Trash.png'%}"></td></a>
                 </tr>
-                <tr>
-                    <td>The Secret Door</td>
-                    <td>Published</td>
-                    <td>5th August, 2022</td>
-                    <td>360 comments</td>
-                    <td>2,400</td>
-                    <td>200</td>
-                    <td>90</td>
-                    <td><img src="images/trash.png">Delete</td>
-                </tr>
-                <tr>
-                    <td>Types of Lecturers in my college</td>
-                    <td>Published</td>
-                    <td>9th August, 2022</td>
-                    <td>0 comments</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td><img src="images/trash.png">Delete</td>
-                </tr>
-                <tr>
-                    <td>The Secret Door</td>
-                    <td>Published</td>
-                    <td>5th August, 2022</td>
-                    <td>360 comments</td>
-                    <td>2,400</td>
-                    <td>200</td>
-                    <td>90</td>
-                    <td><img src="images/trash.png">Delete</td>
-                </tr>
-                <tr>
-                    <td>Types of Lecturers in my college</td>
-                    <td>Published</td>
-                    <td>9th August, 2022</td>
-                    <td>0 comments</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td><img src="images/trash.png">Delete</td>
-                </tr>
-                <tr>
-                    <td>The Secret Door</td>
-                    <td>Published</td>
-                    <td>5th August, 2022</td>
-                    <td>360 comments</td>
-                    <td>2,400</td>
-                    <td>200</td>
-                    <td>90</td>
-                    <td><img src="images/trash.png">Delete</td>
-                </tr>
-                <tr>
-                    <td>Types of Lecturers in my college</td>
-                    <td>Published</td>
-                    <td>9th August, 2022</td>
-                    <td>0 comments</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td><img src="images/trash.png">Delete</td>
-                </tr>
-                <tr>
-                    <td>The Secret Door</td>
-                    <td>Published</td>
-                    <td>5th August, 2022</td>
-                    <td>360 comments</td>
-                    <td>2,400</td>
-                    <td>200</td>
-                    <td>90</td>
-                    <td><img src="images/trash.png">Delete</td>
-                </tr>
-                <tr>
-                    <td>Types of Lecturers in my college</td>
-                    <td>Published</td>
-                    <td>9th August, 2022</td>
-                    <td>0 comments</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td><img src="images/trash.png">Delete</td>
-                </tr>
-                <tr>
-                    <td>The Secret Door</td>
-                    <td>Published</td>
-                    <td>5th August, 2022</td>
-                    <td>360 comments</td>
-                    <td>2,400</td>
-                    <td>200</td>
-                    <td>90</td>
-                    <td><img src="images/trash.png">Delete</td>
-                </tr>
-                <tr>
-                    <td>Types of Lecturers in my college</td>
-                    <td>Published</td>
-                    <td>9th August, 2022</td>
-                    <td>0 comments</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td><img src="images/trash.png">Delete</td>
-                </tr>
-                <tr>
-                    <td>The Secret Door</td>
-                    <td>Published</td>
-                    <td>5th August, 2022</td>
-                    <td>360 comments</td>
-                    <td>2,400</td>
-                    <td>200</td>
-                    <td>90</td>
-                    <td><img src="images/trash.png">Delete</td>
-                </tr>
+                {%endfor%}
             </tbody>
         </table>
     </main>
@@ -252,6 +141,6 @@
         </section>
         <p class="rights">All Rights Reserved</p>
     </footer>
-    <script src="{%static 'index.js'%}"></script>
+    <script src="{%static 'script/index.js'%}"></script>
 </body>
 </html>

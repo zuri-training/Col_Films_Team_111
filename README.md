@@ -26,3 +26,9 @@ Project Documentation here @wiki  https://github.com/proj-team-111/col_films/wik
 
 # Architecture
   -Monolith(Django Templating)
+# Walkthrough
+  1. In the project directory ('Col_Films_Team_111')Create a virtual environment
+  2. Activate the virtual environment
+  3. Install the dependencies in requirements.txt file o( <i>pip install -r requirements.txt</i> )
+  4. Run the server and visit the server address ( <i>localhost</i> if you're on your local machine)
+  

@@ -45,6 +45,10 @@
             <input type="search" name="" id="">
             <select name="categories" id="">
                 <option value="Movies">Categories</option>
+                <option value="Movies">Categories</option>
+                {%for cat in cats%}
+                <option value="Categories">{{cat}}</option> 
+                {%endfor%}
             </select>
         </div>
     </header>

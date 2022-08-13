@@ -12,6 +12,8 @@ def modal(request):
     return render(request, 'video_modal.html', {})
 
 def create_movie(request):
+    if not request.user.id:
+        return render(request, 'blank.html', {})
     def convert(seconds):
         hours = seconds // 3600
         seconds %= 3600
@@ -33,7 +35,8 @@ def create_movie(request):
             elif temp_length <= 600:
                 obj.length = convert(int(clip.duration))
                 obj.save()
-                return redirect('dashboard')
+                # succes = 'Your Movie Was Uploaded Succesfully'
+                return redirect('dashboard', request.user.id)
     else:
          form = MovieCreateForm()
     return render(request, 'add_movie.html', {'form':form})

@@ -40,7 +40,7 @@ def get_reg(request):
             None
 
         # Pull the result from the api and checks for a user with the Reg Number    
-        response = requests.get('http://127.0.0.1:8000/student/')
+        response = requests.get('https://onecubestudents.herokuapp.com/student/')
         ans = response.json()
         for i in ans:
             if i['registration_number'] == registration_number:
@@ -124,7 +124,7 @@ def create_user(request):
             user_name = request.POST.get('username')
             password = request.POST.get('password1')
             password2 = request.POST.get('password2')
-            response = requests.get('http://0.0.0.0:8000/student/')
+            response = requests.get('https://onecubestudents.herokuapp.com/student/')
             ans = response.json()
             for i in ans:
                 # Pull the result from the api and create a user with the details

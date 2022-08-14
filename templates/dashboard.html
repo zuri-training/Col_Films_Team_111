@@ -59,6 +59,7 @@
             <li class="menu-items"><a href="{%url 'dashboard' user.id%}"><img src="{%static 'home-icon.svg'%}" alt=""> Home</a></li>
             <li class="menu-items"><a href="{%url 'library'%}"><img src="{%static 'library-icon.svg'%}" alt=""> Library</a></li>
             <li class="menu-items"><a href="{%url 'add_movie'%}"><img src="{%static 'library-icon.svg'%}" alt=""> Upload</a></li>
+            <li class="menu-items"><a href="{%url 'my_videos'%}"><img src="{%static 'library-icon.svg'%}" alt=""> My Uploads</a></li>
             <li class="menu-items"><a href="{%url 'settings'%}"><img src="{%static 'settings-icon.svg'%}" alt=""> Settings</a></li>
             <li class="menu-items"><a href="{%url 'user_logout'%}"><img src="{%static 'logout-icon.svg'%}" alt=""> Log out</a></li>
         </ul>
@@ -71,7 +72,10 @@
               {%for film in film%}
                 <div class="movie">
                   <a href="{%url 'detail' film.id%}">
-                  <video width="100%" poster="">
+                      
+                      
+                  <video width="100%"  {%if film.thumbnail%} poster="{{film.thumbnail.url}}"{%endif%}>
+                      
                     <source src ="{{film.movie.url}}" type="video/mp4">
                   </video></a>
                     <div class="video-description">
@@ -83,7 +87,7 @@
                             <img src="{%static 'star-icon.svg'%}" alt="" >
                             <img src="{%static 'star-icon.svg'%}" alt="" >
                         </div>
-                        <span class="category">{{film.author}}</span>
+                        <span class="category">{{film.uploader.username}}</span>
                         <div>
                             <span class="views">15 views</span>
                             •
@@ -101,7 +105,7 @@
 
               <div class="movie">
                 <a href="{%url 'detail' film.id%}">
-                <video width="100%" poster="{{film.thumbnail.url}}">
+                <video width="100%" {%if film.thumbnail%} poster="{{film.thumbnail.url}}" {%endif%}>
                   <source src ="{{film.movie.url}}" type="video/mp4">
                 </video></a>
                   <div class="video-description">
@@ -113,7 +117,7 @@
                           <img src="{%static 'star-icon.svg'%}" alt="" >
                           <img src="{%static 'star-icon.svg'%}" alt="" >
                       </div>
-                      <span class="category">{{film.author}}</span>
+                      <span class="category">{{film.uploader.username}}</span>
                       <div>
                           <span class="views">15 views</span>
                           •
@@ -130,7 +134,7 @@
               {%for film in film%}
               <div class="movie">
                 <a href="{%url 'detail' film.id%}">
-                <video width="100%" poster="{{film.thumbnail.url}}">
+                <video width="100%" {%if film.thumbnail%} poster="{{film.thumbnail.url}}" {%endif%}>
                   <source src ="{{film.movie.url}}" type="video/mp4">
                 </video></a>
                   <div class="video-description">
@@ -142,7 +146,7 @@
                           <img src="{%static 'star-icon.svg'%}" alt="" srcset="">
                           <img src="{%static 'star-icon.svg'%}" alt="" srcset="">
                       </div>
-                      <span class="category">{{film.author}}</span>
+                      <span class="category">{{film.uploader.username}}</span>
                       <div>
                           <span class="views">15 views</span>
                           •

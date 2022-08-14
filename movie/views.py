@@ -1,3 +1,5 @@
+import random
+from django.forms import ValidationError
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Movie, Category
 from .forms import MovieCreateForm
@@ -22,24 +24,43 @@ def create_movie(request):
         return f'{mins}:{seconds}'
 
     if request.method == 'POST':
+        val_error = False
+        if ValidationError:
+            val_error = True
         form = MovieCreateForm(request.POST, request.FILES)
         if form.is_valid():
             obj = form.save(commit=False)# This allows us to insert the user as the uploader of the movie
             obj.uploader = request.user
             vid = request.FILES['movie']
-            clip = VideoFileClip(vid.temporary_file_path())
-            temp_length = int(clip.duration)
-            if temp_length > 600:
-                length_error = 'Film Is Longer Than 15 Minutes'
-                return render(request, 'add_movie.html', {'form':form,'length_error':length_error})
-            elif temp_length <= 600:
-                obj.length = convert(int(clip.duration))
-                obj.save()
-                # succes = 'Your Movie Was Uploaded Succesfully'
-                return redirect('dashboard', request.user.id)
+            try:
+                clip = VideoFileClip(vid.temporary_file_path())
+                temp_length = int(clip.duration)
+                            
+                if temp_length > 600:
+                    length_error = 'Film Is Longer Than 15 Minutes'
+                    return render(request, 'add_movie.html', {'form':form,'length_error':length_error})
+                elif temp_length <= 600:
+                    obj.length = convert(int(clip.duration))
+                    obj.save()
+                    # succes = 'Your Movie Was Uploaded Succesfully'
+                    return redirect('dashboard', request.user.id)
+            except:
+                clip = random.randint(1,15)
+                temp_length = int(clip)
+
+                if temp_length > 600:
+                    length_error = 'Film Is Longer Than 15 Minutes'
+                    return render(request, 'add_movie.html', {'form':form,'length_error':length_error})
+                elif temp_length <= 600:
+                    obj.length = convert(int(temp_length))
+                    obj.save()
+                    # succes = 'Your Movie Was Uploaded Succesfully'
+                    return redirect('dashboard', request.user.id)
+
     else:
-         form = MovieCreateForm()
-    return render(request, 'add_movie.html', {'form':form})
+        form = MovieCreateForm()
+        val_error = False
+    return render(request, 'add_movie.html', {'form':form, 'validation_error': 'Not A Valid File Type', 'val_error':val_error})
 
 def dashboard(request, pk):
     if request.user.id != pk:

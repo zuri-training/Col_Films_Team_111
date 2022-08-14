@@ -270,7 +270,7 @@
                         <div class="library moviesImg">
                             <div class="library moviesImgWrap">
                                 <a href="{%url 'detail' film.id%}">
-                                    <video width="100%" {%if film.thumbnail.url%}  {%endif%}>
+                                    <video width="100%" {%if film.thumbnail%} poster="{{film.thumbnail.url}}"  {%endif%}>
                                         <source src="{{film.movie.url}}" type="video/mp4">
                                     </video>
                                 </a>
@@ -342,11 +342,10 @@
                         <div class="library moviesImg">
                             <div class="library moviesImgWrap">
                                 <a href="{%url 'detail' movie.id%}">
-                                    <video width="100%"{%if movie.thumbnail.url%} poster="{{movie.thumbnail.url}}" {%endif%}>
+                                    <video width="100%"{%if movie.thumbnail %} poster="{{movie.thumbnail.url}}" {%endif%}>
                                         <source src="{{movie.movie.url}}" type="video/mp4">
                                     </video>
                                 </a>
-                                <!-- <img src="{{movie.thumbnail.url}}" alt="movie image"> -->
                                 <div class="library movieLength">{{movie.length}}</div>
                             </div>
                             <progress class="library movieProgress" value="32" max="100"></progress>

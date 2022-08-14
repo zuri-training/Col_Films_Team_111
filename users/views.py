@@ -46,6 +46,7 @@ def get_reg(request):
             if i['registration_number'] == registration_number:
                 student = {
                     'email': i['email'],
+                    'first_name': i['first_name'],
                     'registration_number': i['registration_number'],
                 }
                 if not Otp.objects.filter(registration_number=student['registration_number']):

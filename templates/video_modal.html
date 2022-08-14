@@ -377,7 +377,10 @@
                         <div class="videoI moviesImg">
                             <div class="videoI moviesImgWrap">
                                 <a href="{%url 'detail' movie.id%}">
-                                <img {%if movie.thumbnail %} src="{{movie.thumbnail.url}}" {%endif%} alt="movie image"></a>
+                                    <video width="100%" {%if movie.thumbnail %} poster="{{movie.thumbnail.url}}" {%endif%}>
+                                        <source src="{{movie.movie.url}}" type="video/mp4">
+                                    </video>
+                            </a>
                                 <div class="videoI movieLength">{{movie.length}}</div>
                             </div>
                         </div>

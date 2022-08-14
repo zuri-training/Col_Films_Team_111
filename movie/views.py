@@ -66,6 +66,9 @@ def dashboard(request, pk):
     if request.user.id != pk:
         permission_error = 'You Have No Permission To Be Here !!!'
         return render(request, 'dashboard.html', {'permission_error':permission_error})
+    # elif not request.user.id:
+    #     permission_error = 'You Have No Permission To Be Here !!!'
+    #     return render(request, 'dashboard.html', {'permission_error':permission_error})
     film = Movie.objects.all().order_by('-upload_date')
     cats = Category.objects.all()
     data = {

@@ -27,8 +27,10 @@ Project Documentation here @wiki  https://github.com/proj-team-111/col_films/wik
 # Architecture
   -Monolith(Django Templating)
 # Walkthrough
-  1. In the project directory ('Col_Films_Team_111')Create a virtual environment
-  2. Activate the virtual environment
-  3. Install the dependencies in requirements.txt file o( <i>pip install -r requirements.txt</i> )
-  4. Run the server and visit the server address ( <i>localhost</i> if you're on your local machine)
-  
+  1. Create a folder eg <code>Team_111</code>
+  2. Change directory into the folder <code>cd Team_111</code>
+  3. Clone main branch to the folder <code>git clone --branch main https://github.com/zuri-training/Col_Films_Team_111.git</code>
+    now the path to the project is <code>Team_111/Col_Films_Team_111</code>
+  4. Inside the project folder, create a virtual environment <code>python3 -m venv env</code> cd into it and activate it <code>source bin/activate</code> then exit the env <code>cd ..</code>
+  5. Install the the dependencies <code>pip install -r requirements.txt</code>
+

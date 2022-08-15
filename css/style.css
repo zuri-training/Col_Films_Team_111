@@ -1717,7 +1717,7 @@ footer p {
 
   .faq {
     width: 501px;
-    height: 358px;
+    /* height: 358px; */
   }
 
   .faq h2 {

@@ -354,9 +354,8 @@ h6 {
 
 .questions {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -371,6 +370,49 @@ h6 {
 
 .questions p {
   margin: 0;
+}
+
+.question-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+
+
+.answer1,
+.answer2,
+.answer3,
+.answer4,
+.answer5 {
+  display: none;
+  color: #ffffffb6;
+}
+
+.answer2 a {
+  color: #fca311;
+}
+
+.answer2 a:hover {
+  cursor: pointer;
+  color: #e5e5e5;
+}
+
+.question1:hover,
+.question2:hover,
+.question3:hover,
+.question4:hover,
+.question5:hover {
+  cursor: pointer;
+}
+
+.question1:hover .answer1,
+.question2:hover .answer2,
+.question3:hover .answer3,
+.question4:hover .answer4,
+.question5:hover .answer5 {
+  display: block;
 }
 
 .faq-image-wrapper {
@@ -1692,6 +1734,13 @@ footer p {
     font-size: 28px;
     line-height: 44px;
     margin-bottom: 7px;
+  }
+
+  .question-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    width: 100%;
   }
 
   .answer1,
